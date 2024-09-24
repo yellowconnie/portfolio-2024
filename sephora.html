@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="styleguide.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="portfolio.css" />
+    <link rel="stylesheet" href="modify.css" />
+    <title>Crutches Redesign</title>
+</head>
+<body>
+    <div id="root"></div>
+    <!-- <script src="index.js"></script>
+    <script src="sketch.js"></script> -->
+    <!-- SIDEBAR_NAV!!!!DONT DELETE -->
+    <!-- <div class="sidebar-nav">
+        <div class="container">
+            <div class="column">
+                <div class="text-wrapper"><a href="#overview">Overview</a></div>
+                <div class="text-wrapper"><a href="#discover">Discover</a></div>
+                <div class="text-wrapper"><a href="#develop">Develop</a></div>
+                <div class="text-wrapper"><a href="#final-outcome">Outcome</a></div>
+                <div class="text-wrapper"><a href="#reflection">Reflection</a></div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .sidebar-nav {
+            position: fixed;
+            bottom: 3%;
+            right: 3px;
+            transform: translateY(-50%);
+            z-index: 1000;
+            background-color: transparent;
+            padding: 10px;
+        }
+
+        .sidebar-nav .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-nav .column {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .sidebar-nav .text-wrapper {
+            margin-bottom: 16px;
+        }
+
+        .sidebar-nav a {
+            text-decoration: none;
+            color: var(--text-decorate-dark);
+            font-family: var(--text-tiny-light-font-family);
+            font-size: var(--text-tiny-light-font-size);
+            font-weight: var(--text-tiny-light-font-weight);
+            transition: color 0.3s ease;
+            opacity: 0.5;
+        }
+
+        .sidebar-nav a:hover {
+            color: var(--primitive-color-highlight);
+            opacity: 1;
+        }
+    </style> -->
+
+    <div class="navigation-buttons">
+        <span class="nav-tooltip"></span>
+        <button class="nav-button" onclick="scrollToNextSection('overview')">
+            <i class="fas fa-chevron-down"></i>
+        </button>
+    </div>
+
+    <style>
+        .navigation-buttons {
+            position: fixed;
+            bottom: 3%;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-button {
+            background-color: var(--primitive-color-highlight);
+            color: white;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: var(--text-decorate-dark);
+        }
+
+        .nav-button i {
+            font-size: 20px;
+        }
+
+        .nav-button.rotate i {
+            transform: rotate(180deg);
+        }
+
+        .nav-tooltip {
+            opacity: 0;
+            visibility: hidden;
+            background-color: var(--primitive-color-light);
+            color: var(--text-decorate-dark);
+            text-align: center;
+            border-radius: 16px;
+            padding: 5px 10px;
+            position: absolute;
+            z-index: 1;
+            right: 120%;
+            transition: opacity 0.3s;
+            font-family: var(--text-tiny-light-font-family);
+            font-size: var(--text-tiny-light-font-size);
+            white-space: nowrap;
+        }
+
+        .navigation-buttons:hover .nav-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <script>
+        function scrollToNextSection(currentId) {
+            const sections = ['overview', 'discover', 'develop', 'outcome', 'reflection'];
+            const currentIndex = sections.indexOf(currentId);
+            const nextIndex = (currentIndex + 1) % sections.length;
+            const nextId = sections[nextIndex];
+            
+            const nextElement = document.getElementById(nextId);
+            if (nextElement) {
+                nextElement.scrollIntoView({ behavior: 'smooth' });
+                updateButton(nextId);
+            }
+        }
+
+        function updateButton(currentId) {
+            const button = document.querySelector('.nav-button');
+            const tooltip = document.querySelector('.nav-tooltip');
+            button.setAttribute('onclick', `scrollToNextSection('${currentId}')`);
+            
+            const sections = ['overview', 'discover', 'develop', 'outcome', 'reflection'];
+            const currentIndex = sections.indexOf(currentId);
+            const nextIndex = (currentIndex + 1) % sections.length;
+            const nextId = sections[nextIndex];
+            
+            tooltip.textContent = nextId.charAt(0).toUpperCase() + nextId.slice(1);
+            
+            if (currentId === 'reflection') {
+                button.classList.add('rotate');
+            } else {
+                button.classList.remove('rotate');
+            }
+        }
+
+        // Initialize the button to start from 'overview'
+        document.addEventListener('DOMContentLoaded', function() {
+            updateButton('overview');
+        });
+    </script>
+
+
+    <div class="navbar">
+        <div class="container">
+          <div class="logo">
+            <div id="logo-name" class="content"><a href="index.html">YC</a></div>
+            <div id="full-name" class="content"><a href="index.html">YellowConnie</a></div>  
+          </div>
+          <div class="column">
+            <div class="text-wrapper"><a href="google.com">About Me</a></div>
+            <div id="contact" class="text-wrapper">
+                <a href="portfolio.html">Portfolio</a>
+                <div class="dropdown-content">
+                  <a href="portfolio.html#product-design">Product</a>
+                  <a href="portfolio.html#service-design">Service</a>
+                  <a href="portfolio.html#furniture-design">Furniture</a>
+                </div>
+            </div>
+            <div class="text-wrapper"><a href="google.com">Services</a></div>
+            <div id="contact" class="text-wrapper">
+              <a href="contact.html">Contact</a>
+              <div class="dropdown-content">
+                <a href="mailto:conniehuang@ocadu.ca">Email</a>
+                <a href="https://www.linkedin.com/in/yellowconnie/">LinkedIn</a>
+                <a href="https://www.instagram.com/cooonni3/">Instagram</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="portfolio-header">
+        <div class="content">
+            <div class="column">
+                <div class="div">
+                    <div class="heading">
+                        Sephora Secondary Packaging System Redesign
+                    </div>
+                    <p class="overview">
+                        We redesigned Sephora's secondary packaging and developed new 
+                        programs to promote eco-friendly practices and enhance customer expectations.
+                    </p>
+                </div>
+                <div class="tags">
+                    <div class="tag"><div class="text-wrapper">RESEARCH</div></div>
+                    <div class="tag"><div class="text-wrapper">DESIGN</div></div>
+                    <div class="tag"><div class="text-wrapper">MECHANISM</div></div>
+                    <div class="tag"><div class="text-wrapper">3D MODELING & PROTOTYPING</div></div>
+                </div>
+            </div>
+           
+            <div class="list">
+                <div class="content-2">
+                    <div class="list-item">
+                        <div class="text-2">Client</div>
+                        <div class="text-3">Personal Project</div>
+                    </div>
+                    <div class="list-item">
+                        <div class="text-2">Duration</div>
+                        <div class="text-3">Nov 2023 - Dec 2023</div>
+                    </div>
+                </div>
+                <div class="content-2">
+                    <div class="list-item-2">
+                        <div class="text-2">Team</div>
+                        <div class="text-3">Connie Huang | Jolie Nguyen | Raiy Admassu</div>
+                    </div>
+                </div>
+                <div class="content-2">
+                    <div class="list-item-2">
+                        <div class="text-2">Role</div>
+                        <div class="text-3">Lead Designer - Research, Visual Design, Product Design, 3D Modeling</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <img class="header-image" src="sephora-header.png" alt="Crutches"/>
+    </div>
+
+
+    <div id="overview" class="problem-layout">
+        <div class="section-title">
+            <div class="subheading">Intro</div>
+            <div class="content">
+                <p class="heading">
+                    "Rethinking Packaging for a Sustainable, Engaging Future"
+                </p>
+                <p class="p">
+                    The way consumers interact with brands is evolving. With the rise of 
+                    e-commerce, packaging is no longer just about delivering a product—it's 
+                    about delivering an experience. With the interest in Beauty and the habits of 
+                    online shopping, it leads us to rethink about the unboxing experience of Sephora's 
+                    online service. Our goal was to redesign Sephora's secondary packaging to reflect its 
+                    brand identity, reduce waste, and create an unforgettable unboxing experience.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="problem-layout">
+        <div class="section-title">
+            <div class="subheading">Overview</div>
+            <div class="content">
+                <p class="heading">"Where Luxury Meets Sustainability: Transforming Seohora's secondary
+                    packaging to redefine the unboxing exoerience."
+                </p>
+            </div>
+        </div>
+        <div class="problem-div">
+            <div class="subheading">2 New Services + 1 New Shipping Box Design</div>
+            <div class="row">                
+                <div class="column">
+                    <img class="snap-image" src="sephora-snapshotP.png" alt="Crutches">
+                    <div class="text-wrapper">Feeling Luxurious</div>
+                    <p class="p">Redefine your unboxing experience!</p>
+                </div>
+                <div class="column">
+                    <img class="snap-image" src="sephora-snapshotC.png" alt="Crutches">
+                    <div class="text-wrapper">Saving the Earth</div>
+                    <p class="p">
+                        Practice recycling and reducing waste!
+                    </p>
+                </div>
+                <div class="column">
+                    <video class="snap-image" src="sephora-box.mp4" alt="Crutches" autoplay loop muted></video>
+                    <div class="text-wrapper">Reusable Packaging</div>
+                    <p class="p">
+                        New shipping box design to reduce waste!
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="discover" class="feature-layout">
+        <div class="container">
+            <div class="content">
+                <div class="div">
+                    <div class="subheading">Discover (01)</div>
+                    <p class="heading">About Packaging</p>
+                </div>
+                <div class="list">
+                    <div class="list-item">
+                        <div class="feature-text">
+                            Packaging design impacts more than just the product it contains. Through 
+                            our futures wheel, we mapped out how innovative packaging could reduce shipping costs, 
+                            minimize the carbon footprint, and enhance brand identity. This visualization 
+                            became the foundation for our design strategy—every improvement would not only reduce 
+                            waste but also increase brand value and customer satisfaction.
+                            <!-- Packaging design is a strategic persuasive tool used to significantly increase 
+                            company's profitability in so many ways beyond aesthetics. It is to serve as a 
+                            communication tool to convey essential information on usage, ingredients and benefits. 
+                            It adds functionality and convenience of product with easy-to-open or 'satisfying 
+                            unboxing' to improve and create enjoyable user experience. Additionally, it adds 
+                            uniqueness and differentiation to stand out from other companies; this inturn 
+                            increases product's value. This also adds brand identity and recognition fostering 
+                            customer loyalty. Overall, effective packaging design is an investment that can yield 
+                            significant profit- it contributes to attracting their targeted demographics, influences 
+                            purchase decisions and enhances user experience.  -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img class="painpoint-image" src="packaging-map.png" alt="Mechanism">
+        </div>
+    </div>
+
+    <div class="feature-layout">
+        <div class="container">
+            <div class="content">
+                <div class="div">
+                    <p class="heading">Have you ever received a package like this?</p>
+                    <p class="feature-text">
+                        Sephora’s current standardized packaging, while efficient from a logistics standpoint, 
+                        creates a negative unboxing experience. Customers are left with oversized boxes 
+                        filled with XXX(paper wraps???), which not only disappoints but also 
+                        contradicts Sephora's sustainability goals.
+                         <!-- (REMOVE THIS???)Our challenge was to align Sephora’s 
+                        packaging with its eco-conscious branding while improving the unboxing experience 
+                        for online shoppers. -->
+                    </p>
+                </div>
+                <!-- <div class="list">
+                    <div class="list-item"><div class="feature-text">Pain Points</div></div>
+                    <div class="list-item">
+                        <img class="icon-relume" src="img/relume.svg" />
+                        <div class="feature-text">Difficulty in Adjustability</div>
+                    </div>
+                    <div class="list-item">
+                        <img class="icon-relume" src="img/relume.svg" />
+                        <div class="feature-text">Lack of Stable Support During Vehicle Entry</div>
+                    </div>
+                    <div class="list-item">
+                        <img class="icon-relume" src="img/relume.svg" />
+                        <div class="feature-text">Inconvenience in Portability</div>
+                    </div>
+                </div> -->
+            </div>
+            <img class="painpoint-image" src="sephora-problem.png" alt="demo">
+        </div>
+    </div>
+
+    <div id="discover" class="feature-layout">
+        <div class="container">
+            <div class="content">
+                <div class="div">
+                    <div class="subheading">Design Opportunity</div>
+                    <p class="heading">Sephora's Beauty Repurpose Program</p>
+                </div>
+                <div class="list">
+                    <div class="list-item">
+                        <div class="feature-text">
+                            ****Sephora's Beauty Repurpose Program is a program that allows customers to return 
+                           INTRO OF SEPHORA'S BEAUTY REPURPOSE PROGRAM
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img id="sephora-painpoint" class="painpoint-image" src="sephora-painpoint.png" alt="Mechanism">
+        </div>
+    </div>
+
+    <h1>SHOW Statistics!!!</h1>
+
+
+    <div class="aim-layout">
+        <div class="section-title">
+            <div class="subheading">The Problem of Sephora's Secondary (Standardized) Packaging</div>
+            <div class="content">
+                <p class="heading">
+                    ***Sephora's current secondary packaging strategy prioritizes 
+                    cost and efficiency, however, it neglects the user experience and environmental 
+                    consequences.
+                </p>
+                <img class="thin-decorate" src="sephora-thin-decorate.png" alt="Decorate">
+            </div>
+        </div>
+        
+        <div class="aim-div">
+            <div class="row">
+                <div class="column">
+                    <div class="subheading">Survey Takeaways</div>
+                    <div class="text-wrapper">"It's just a box with the purchased items thrown in."</div>
+                    <div class="text-wrapper">"There was nothing special or memorable about the experience."</div>
+                    <p id="sephora" class="p">
+                        - Average Rating: 3/5
+                    </p>
+                    <p id="sephora" class="p">
+                        - Positive: Customers enjoyed the free samples and fast delivery, 
+                        with some describing the unboxing as "exciting." But this mainly 
+                        focused on their purchase rather than the packaging.
+                    </p>
+                    <p id="sephora" class="p">
+                        - Negative: A common complaint was that products seemed to be "just thrown in," 
+                        with little organization or presentation, leading to a lackluster experience.
+                    </p>
+                    <br>
+                    <div class="text-wrapper">"It doesn't match the aesthetic of some high-end brands they sell."</div>
+                    <p class="subheading">
+                        Suggestions for Enhancement
+                    </p>
+                    <p id="sephora" class="p">
+                        - Aesthetic and Design: Customers suggested adding more design elements to the 
+                        packaging to make it visually appealing, as it felt too plain or "cardboard-y." 
+                    </p>
+                    <p id="sephora" class="p">
+                        - More secure and organized packaging: Some customers experienced product 
+                        leakage or desired more secure product placement.
+                    </p>
+                    <p id="sephora" class="p">
+                        More Samples and Freebies: There was a clear desire for more free samples and promotional inserts.
+                    </p>
+                    <div class="text-wrapper">
+                        Standardized vs. Non-Standardized Packaging
+                    </div>
+                    <P id="sephora" class="p">
+                        - Standardized packaging was perceived as efficient but lacking in creating a memorable, high-quality experience.
+                    </P>
+                    <p id="sephora" class="p">
+                        - Customers viewed non-standardized packaging as more luxurious and bespoke, enhancing the overall unboxing experience.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h1>SHOW SURVEY QUESTIONS!!!</h1>
+
+    <div class="problem-layout">
+        <div class="section-title">
+            <div class="subheading">Other Companies' Standardized Packaging</div>
+            <div class="content">
+                <p class="heading">***Woola analyses 42 packages from large companies, 
+                    including Rituals, Amazon, and Sephora:
+                </p>
+                <p class="p">E COMMERCE v.s. STANDARDIZED PACKAGING</p>
+            </div>
+        </div>
+        <div class="problem-div">
+            <div class="subheading">The Pain Points</div>
+            <div class="row">
+                
+                <div class="column">
+                    <div class="text-wrapper">Sizing</div>
+                    <p class="p">50% of the packages were oversized.</p>
+                </div>
+                <div class="column">
+                    <div class="text-wrapper">Recyclability</div>
+                    <p class="p">
+                        50% of the packages were not recyclable.
+                    </p>
+                </div>
+                <div class="column">
+                    <div class="text-wrapper">Circularity</div>
+                    <p class="p">
+                        Only 2 out of 42 used circular packaging (return program).
+                        
+                    </p>
+                </div>
+                <div class="column">
+                    <div class="text-wrapper">Branding</div>
+                    <p class="p">Limited to printed logo as brand identity.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="problem-layout">
+        <div class="section-title">
+            <div class="content">
+                <div class="subheading">Takeaways from Subject Matter Expert (SME) Interview</div>
+                <p class="heading">
+                    Companies main goal is to ensure product protection and cost-efficiency.
+                </p>
+                <p class="p">
+                    We conducted interviews with 2 subject matter experts (SME) to gain insights into the 
+                    current packaging methods and challenges faced by the company.
+                </p>
+            </div>
+        </div>
+        <div class="problem-div">
+            <div class="row">             
+                <div class="column">
+                    <div class="text-wrapper">Company 1 - QBER</div>
+                    <p class="p">
+                        QBER is a health and wellness brand offering a variety of products embedded 
+                        with quantum frequency resonance technology. QBER utilizes a standardized 
+                        packaging system to accommodate the diverse sizes of their product range.
+                    </p>
+                    <div class="subheading">
+                        Packaging Options:
+                    </div>
+                    <div class="subheading">
+                        - Uses standardized packaging to ship products in varied size
+                    </div>
+                    <div class="subheading">
+                        - 3-4 sizes of boxes
+                    </div>
+                    <div class="subheading">
+                        - cardboard boxes and bubble wraps
+                    </div>
+                    <p class="p">
+                        There is a recognition of the need for improvement in the packaging system, 
+                        but the current method is deemed the most economical at the moment.
+                        Attempts to use eco-friendly materials like honeycomb paper and 
+                        air-filled bags were limited due to higher costs and storage difficulties.
+                    </p>
+                </div>
+                <div class="column">
+                    <div class="text-wrapper">Company 2 - DND</div>
+                    <p class="p">
+                        DND is a plastic injection molding company that produces a wide range 
+                        of products. Depending on the order, they may package multiple units of 
+                        the same product together in one box or provide individual packaging for each item.
+                    </p>
+                    <div class="subheading">
+                        Packaging Options:
+                    </div>
+                    <div class="subheading">
+                        - Individual Packaging - cardboard boxes and foam/cardboard inserts
+                    </div>
+                    <p class="p">
+                        Tailored to the product size (done through drop testing).
+                    </p>
+                    <div class="subheading">
+                        - Smaller Products - cardboard boxes and bubble bags/paper trays
+                    </div>
+                    <p class="p">
+                        Packaging multiple units of the same product in one box, 
+                        with customized packaging tailored to the product's size and surface finish, including 
+                        the selection of appropriate protective materials.
+                    </p>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                Shared Insights
+            </div>
+            <p class="p">
+                - Both companies prioritize cost-effectiveness and product protection in their packaging systems.
+            </p>
+            <div class="text-wrapper">
+                Constraints
+            </div>
+            <p class="p">
+                - Higher Costs: The use of more eco-friendly materials is often more expensive, limiting their adoption.
+            </p>
+            <p class="p">
+                - Storing Challenges: Storage difficulties arise with different packaging materials, 
+                especially when aiming for environmentally friendly options.
+            </p>
+        </div>
+    </div>
+
+    <div class="feature-layout">
+        <div class="container">
+            <div class="content">
+                <div class="div">
+                    <p class="heading">User Research</p>
+                </div>
+                <div class="list">
+                    <div class="list-item">
+                        <img class="icon-relume" src="img/relume.svg" />
+                        <div class="feature-text">
+                            Sephora's targeted consumers are individuals of all races, 
+                            seeking an inclusive beauty experience with personalized services, 
+                            expert advice, and a product line that caters to a diverse clientele.
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <img class="icon-relume" src="img/relume.svg" />
+                        <div class="feature-text">
+                            Sephora's targeted consumers are mainly women within the 24-36 age range. 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img id="sephora-user" class="painpoint-image" src="sephora-user.png" alt="women of various skin tones">
+        </div>
+    </div>
+
+    <div id="develop" class="problem-layout">
+        <div class="section-title">
+            <div class="subheading">Concept Development (02)</div>
+            <div class="heading">
+                Design Criteria/ Prioritization Matrix
+            </div>
+        </div>
+        <div class="problem-div">
+            <div class="row">             
+                <div class="column">
+                    <div class="text-wrapper">Fixed Design Criteria</div>
+                    <p class="p">
+                        These criteria are essential for the success of the new packaging design and cannot be compromised.
+                    </p>
+                    <div class="subheading">
+                        1. Maintain Sephora's Sales and Profitability
+                    </div>
+                    <div class="subheading">
+                        2. No Inconvenience to Customers
+                    </div>
+                    <div class="subheading">
+                        3. Promote Sustainability
+                    </div>
+                    <div class="subheading">
+                        4. Deliver an Excellent User Experience and Unboxing Service
+                    </div>
+                    <div class="subheading">
+                        5. Align with Sephora's Brand Identity
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="text-wrapper">Flexible Criteria</div>
+                    <p class="p">
+                        These criteria can be adjusted depending on feedback, costs, or logistical challenges.
+                    </p>
+                    <div class="subheading">
+                        1. Customization Options
+                    </div>
+                    <div class="subheading">
+                        2. Material Innovations
+                    </div>
+                    <div class="subheading">
+                        3. Return Logistics and Circular Economy Integration
+                    </div>
+                    <div class="subheading">
+                        4. Modify Packaging Sizes and Versatility
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="feature-layout">
+        <div class="container">
+            <div class="content">
+                <div class="subheading">Pain Points</div>
+                <p class="heading">
+                    ISSUES OF SEPHORA'S CURRENT PACKAGING
+                </p>
+                <div class="feature-text">
+                    Based on the research, we identified the following pain points:
+                </div>
+                <div class="list">
+                    <div class="list-item">
+                        <div class="feature-text">
+                            1. Missed Opportunities for Eco-Friendly Innovation
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <div class="feature-text">
+                            2. Inconsistent Sustainability Efforts
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <div class="feature-text">
+                            3. Oversized Packaging
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <div class="feature-text">
+                            4. Storage Challenges
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <div class="feature-text">
+                            5. Unimpressive Unboxing Experience
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img id="sephora-painpoint" class="painpoint-image" src="sephora-painpoint.png" alt="Pain Points">        
+        </div>
+    </div>
+
+    <div class="problem-layout">
+        <div class="section-title">
+            <div class="subheading">Concept Development (02)</div>
+            <div class="content">
+                <p class="heading">to redesign Sephora's packaging and develop programs 
+                    that are environmentally conscious while also aligning with customer 
+                    expectations.
+                </p>
+                <p class="p">
+                    after doing the research, we narrowed down the design intent to the following:
+                </p>
+            </div>
+        </div>
+        <div class="problem-div">
+            <div class="subheading">Objectives</div>
+            <div class="row">               
+                <div class="column">
+                    <div class="text-wrapper">Brand Identity</div>
+                    <p class="p">Reflecting Sephora's brand identity to address environmental issues.
+                    </p>
+                </div>
+                <div class="column">
+                    <div class="text-wrapper">Customer Loyalty</div>
+                    <p class="p">
+                        Encouraging customer retention and loyalty through sustainable packaging initiatives.
+                    </p>
+                </div>
+                <div class="column">
+                    <div class="text-wrapper">Minimize Waste</div>
+                    <p class="p">
+                        Reducing waste from oversized packaging to minimize environmental impact.
+                    </p>
+                </div>
+                <div class="column">
+                    <div class="text-wrapper">Prolong Shelf Life</div>
+                    <p class="p">Creating packaging with aesthetic appeal and durable materials to extend the packaging's shelf life.
+                    </p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div>PHASE 3 SHOW LOFI PROTOTYPE -> HIGH FI PROTOTYPE and its FEATUREs</div>
+    <div>ADD Initial services and usability test/feedback</div>
+
+    <div id="outcome" class="feature-layout">
+        <div class="container">
+            <div class="content">
+                <div class="div">
+                    <div class="subheading">Final Outcome (03)</div>
+                    <p class="heading">Service 01/Circular Package Program </p>
+                </div>
+                <div class="list">
+                    <div class="list-item">
+                        <div class="feature-text">
+                            Sephora's Circular Package Program provides an eco-friendly 
+                            alternative to traditional cardboard packaging. Customers 
+                            receive their orders in reusable boxes that can be returned 
+                            for points, encouraging a sustainable and rewarding shopping 
+                            experience. The program aims to reduce waste and promote a circular economy, 
+                            making it easier for customers to contribute to a greener planet.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img id="sephora-feature" class="painpoint-image" src="circular-detail.png" alt="Mechanism">
+        </div>
+    </div>
+
+    <div class="feature-layout">
+        <div class="container">
+            <div class="content">
+                <div class="div">
+                    <p class="heading">User Persona & Journey Map</p>
+                </div>
+                <div class="list">
+                    <div class="list-item">
+                        <div class="feature-text">
+                            ***Packaging design impacts more than just the product it contains. Through 
+                            our futures wheel, we mapped out how innovative packaging could reduce shipping costs, 
+                            minimize the carbon footprint, and enhance brand identity. This visualization 
+                            became the foundation for our design strategy—every improvement would not only reduce 
+                            waste but also increase brand value and customer satisfaction.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <video class="snap-image" src="sephora-box.mp4" alt="Crutches" autoplay loop muted></video>
+            <img id="package-feature" class="painpoint-image" src="sephora-package-feature.jpg" alt="Mechanism"> -->
+        </div>
+        <div class="container2">
+            <img id="journey-map" class="painpoint-image" src="sephora-package-feature.jpg" alt="Mechanism">
+        </div>
+    </div>
+
+
+    <div class="feature-layout">
+        <div class="container">
+            <img id="sephora-feature" class="painpoint-image" src="luxury-detail.png" alt="Mechanism">
+            <div class="content">
+                <div class="div">
+                    <p class="heading">Service 02/Circular Package Program </p>
+                </div>
+                <div class="list">
+                    <div class="list-item">
+                        <div class="feature-text">
+                            For customers seeking an elevated unboxing experience and a touch of personalization, 
+                            Sephora's Personalized Premium Packaging offers a beautifully arranged, reusable box. 
+                            This service allows customers to customize their box with engravings like their name or 
+                            favorite quote, making it a keepsake for storing belongings. While this premium service 
+                            includes additional fees, it offers a unique, luxurious, and sustainable packaging option 
+                            that enhances the overall shopping experience.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="feature-layout">
+        <div class="container">
+            <div class="content">
+                <div class="div">
+                    <p class="heading">New Packaging Design</p>
+                </div>
+                <div class="list">
+                    <div class="list-item">
+                        <div class="subheading">New Shipping Box Design Concept</div>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="list-item">
+                        <div class="feature-text">
+                            To enhance logistics efficiency, our new shipping box is 
+                            designed to be both durable and easily collapsible, allowing 
+                            it to be effortlessly flattened for convenient storage and transportation. 
+                            This design ensures ease of handling for both customers and logistics teams.
+                        </div>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="list-item">
+                        <div class="subheading">Material Used</div>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="list-item">
+                        <div class="feature-text">
+                            We utilize recycled plastic sourced from Sephora’s existing Beauty 
+                            Repurposed Program, promoting sustainability by repurposing plastic waste 
+                            into functional packaging materials.
+                        </div>
+                    </div>
+                </div>
+                <div class="list">  
+                    <div class="list-item">
+                        <div class="subheading">Built-in inflatable airbag</div>
+                    </div>
+                </div>
+                <div class="list">  
+                    <div class="list-item">
+                        <div class="feature-text">
+                            For added product protection, we’ve replaced traditional paper 
+                            wraps with a built-in inflatable airbag system within the box. This airbag 
+                            can be easily inflated and deflated with each use, effectively filling empty 
+                            spaces and providing superior protection for items during transit. It offers a 
+                            sustainable, space-saving solution for protecting products without the need for 
+                            excess materials.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <video class="snap-image" src="sephora-box.mp4" alt="Crutches" autoplay loop muted></video>
+            <img id="package-feature" class="painpoint-image" src="sephora-package-feature.jpg" alt="Mechanism"> -->
+        </div>
+        <div class="container2">
+            <video class="snap-image" src="sephora-box.mp4" alt="Crutches" autoplay loop muted></video>
+            <img id="package-feature" class="painpoint-image" src="sephora-package-feature.jpg" alt="Mechanism">
+        </div>
+    </div>
+
+
+    <div class="problem-layout">
+        <div class="section-title">
+            <div class="content">
+                <p class="heading">
+                    Usability Testing
+                </p>
+                <p class="p">
+                    We conducted usability testing with 10 participants in the target demographic 
+                    to evaluate the user experience of our service system. 
+                </p>
+            </div>
+        </div>
+        <div class="problem-div">
+            <div class="subheading">1. Return Options for Sephora's Circular Packaging Program</div>
+            <div class="row">
+                
+                <div class="column">
+                    <div class="text-wrapper">01. Deposit System</div>
+                    <p class="p">
+                        Customers are required to pay a refundable deposit for the packaging when they place the order. 
+                        This deposit is returned to them once the packaging is sent back in good condition.
+                    </p>
+                    <div class="subheading">
+                        Pain Points:
+                    </div>
+                    <div class="subheading">
+                        1. Financial Burden on Customers
+                    </div>
+                    <p class="p">
+                        Users were uneasy about having extra money deducted from their bank account, feeling burdened 
+                        by the responsibility to return the box in perfect condition.
+                    </p>
+                    <div class="subheading">
+                        2. Anxiety Over Damages
+                    </div>
+                    <p class="p">
+                        Testers were anxious about possibly losing their deposit.
+                    </p>
+                    <div class="subheading">
+                        3. Sense of Obligation
+                    </div>
+                    <p class="p">
+                        The deposit system added stress, making users feel obligated and detracting from the shopping experience.
+                    </p>
+                    <br>
+                    <div class="subheading">
+                        Key Quotes:
+                    </div>
+                    <div class="list">
+                        <div class="list-item">
+                            <img class="icon-relume" src="img/relume.svg" />
+                            <div class="feature-text">
+                                "I just don't want an extra amount of money got deducted from my bank account."
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="compensation" class="column">
+                    <div class="text-wrapper">02. Compensation System (preffered)</div>
+                    <p class="p">
+                        Instead of paying a deposit, customers are compensated or rewarded with pointsbased on the 
+                        condition of the box when they return it.
+                    </p>
+                    <div class="subheading">
+                        Positive Feedback:
+                    </div>
+                    <div class="subheading">
+                        1. No Upfront Financial Commitment:
+                    </div>
+                    <p class="p">
+                        Users preferred this system as it eliminates the anxiety of an upfront cost.
+                    </p>
+                    <div class="subheading">
+                        2. Incentivizes Participation:
+                    </div>
+                    <p class="p">
+                        Earning rewards or points for returning packaging motivates users, 
+                        making them more likely to engage with the program.
+                    </p>
+                    <br>
+                    <div class="subheading">
+                        Key Quotes:
+                    </div>
+                    <div class="list">
+                        <div class="list-item">
+                            <img class="icon-relume" src="img/relume.svg" />
+                            <div class="feature-text">
+                                "I feel more comfortable with the idea of getting 
+                                something in return without having to pay anything extra upfront."
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="reflection" class="process-gallery">   
+        <div class="reflection">
+            <div class="section-title">
+                ***Used Tools
+            </div>
+            <div class="content">
+                <div class="list">
+                    <div class="list-item">
+                        <div class="subheading">
+                            Research
+                        </div>
+                        <div class="feature-text">
+                            User Interview, User Observation, User Experience Mapping, Literature Review
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <div class="subheading">
+                            Design
+                        </div>
+                        <div class="feature-text">
+                            Fusion 360, Mechanical Engineering Principles, 3D Printing, Prototyping
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="section-title">
+                Reflection
+            </div>
+            <div class="content">
+                <p class="p">This project was a great learning experience 
+                    as it allowed me to explore mechanical and engineering aspects of 
+                    design that I had no experience with. 
+                </p>
+                <p class="p">
+                    I learned how to use Onshape to create 3D models and 
+                    how to use mechanical engineering principles to design a 
+                    well-functioning product.
+                </p>
+            </div>
+            <br>
+            <div class="section-title">
+                Future Development
+            </div>
+            <div class="content">
+                <div class="list">
+                    <div class="list-item">
+                        <div class="subheading">
+                            Material Exploration
+                        </div>
+                        <div class="feature-text">
+                            Explore sustainable and lightweight materials, 
+                            such as aluminum for the crutch legs, to enhance 
+                            performance and durability.
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <div class="subheading">
+                            Extensive Testing
+                        </div>
+                        <div class="feature-text">
+                            Conduct further testing on standard crutch materials 
+                            to compare functionality with the current plastic prototypes, 
+                            ensuring the design meets real-world requirements.
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <div class="subheading">
+                            Customization for Wider Use
+                        </div>
+                        <div class="feature-text">
+                            Refine the adjustable height feature to make CrutchEase 
+                            accessible for a diverse range of users, rather than being 
+                            limited to the current client's specifications.
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- <script src="dist/bundle.js"></script> -->
+</body>
+</html>
