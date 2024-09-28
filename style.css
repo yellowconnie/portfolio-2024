@@ -202,7 +202,9 @@
   display: flex;
   align-self: stretch;
   width: 40%;
+  height: 40%;
   padding-left: 112px;
+  object-fit: cover;
 }
 .layout .content {
   display: flex;
@@ -238,6 +240,21 @@
   line-height: var(--text-medium-normal-line-height);
   font-style: var(--text-medium-normal-font-style);
 }
+
+/* Add this new rule */
+.layout .text .highlight {
+  color: var(--primitive-color-highlight);
+}
+
+.layout .note{
+  font-family: var(--text-regular-normal-font-family);
+  font-weight: var(--text-regular-normal-font-weight);
+  color: var(--semantic-text-primary);
+  font-size: var(--text-regular-normal-font-size);
+  letter-spacing: var(--text-regular-normal-letter-spacing);
+  line-height: var(--text-regular-normal-line-height);
+  font-style: var(--text-regular-normal-font-style);
+}
 .layout {
   display: flex;
   flex-direction: column;
@@ -251,6 +268,17 @@
   overflow: hidden;
   background-color: var(--primitive-color-light);
 }
+.layout ol a{
+  color: var(--text-decorate-dark);
+  text-decoration: underline;
+  text-decoration-color: var(--primitive-color-highlight);
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  background-color: #49282c11;
+  border-radius: 32px;
+  display: inline-block;
+}
+
 .container {
   display: flex;
   align-items: center;
