@@ -331,10 +331,10 @@
     flex-grow: 1;
 
 }
-.aim-layout .icon-relume {
+.aim-layout .arrow-icon {
     position: relative;
-    width: 48px;
-    height: 48px;
+    width: 16px;
+    height: 16px;
 }
 .aim-layout .text-wrapper {
     position: relative;
@@ -577,11 +577,11 @@
     width: 100%;
     flex: 0 0 auto;
 }
-.feature-layout .icon-relume {
+.feature-layout .arrow-icon {
     position: relative;
-    width: 48px;
-    height: 48px;
-    /* object-fit: contain; */
+    width: 16px;
+    height: 16px;
+    object-fit: cover;
 }
 .feature-layout .feature-text {
     position: relative;
@@ -1116,7 +1116,7 @@
 
 }
 
-/* .process-map-layout .icon-relume {
+/* .process-map-layout .arrow-icon {
     position: relative;
     width: 48px;
     height: 48px;

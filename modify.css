@@ -95,7 +95,7 @@
     width: 100%;
     flex: 0 0 auto;
 }
-.dp-layout .icon-relume {
+.dp-layout .arrow-icon {
     position: relative;
     width: 16px;
     height: 16px;
@@ -304,10 +304,10 @@
     /* height: 400px; */
     object-fit: cover;
 }
-.problem-layout .icon-relume {
+.problem-layout .arrow-icon {
     position: relative;
-    width: 48px;
-    height: 48px;
+    width: 16px;
+    height: 16px;
 }
 .problem-layout .text-wrapper {
     position: relative;
@@ -490,10 +490,10 @@
     width: 100%;
     flex: 0 0 auto;
 }
-.problem-layout .icon-relume {
+.problem-layout .arrow-icon {
     position: relative;
-    width: 48px;
-    height: 48px;
+    width: 16px;
+    height: 16px;
     /* object-fit: contain; */
 }
 .problem-layout .feature-text {
