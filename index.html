@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="construction-banner">
+      <div class="construction-content">
+          This website is still under construction 🚧 But welcome in!
+      </div>
+    </div>
     <div id="root"></div>
 
     <!-- <script src="sketch.js"></script> -->
@@ -17,7 +22,7 @@
           <div id="full-name" class="content"><a href="index.html">YellowConnie</a></div>  
         </div>
         <div class="column">
-          <div class="text-wrapper"><a href="google.com">About Me</a></div>
+          <div class="text-wrapper"><a href="about.html">About Me</a></div>
           <div id="contact" class="text-wrapper">
             <a href="portfolio.html">Portfolio</a>
             <div class="dropdown-content">
@@ -149,5 +154,10 @@
       </div>
     </div>
     <!-- <script src="dist/bundle.js"></script> -->
+    <script>
+      setTimeout(() => {
+        document.querySelector('.construction-banner').classList.add('fade-out');
+      }, 3000);
+    </script>
   </body>
 </html>

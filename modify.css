@@ -519,3 +519,101 @@
     line-height: var(--heading-desktop-h3-line-height);
     font-style: var(--heading-desktop-h3-font-style);
 }
+
+.dropdown-section {
+    margin-top: 2rem;
+}
+
+.dropdown-section details {
+    margin-bottom: 1rem;
+}
+
+.dropdown-section summary {
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    list-style: none;
+    position: relative;
+    padding-right: 560px;
+}
+
+.dropdown-section summary::before {
+    content: '+';
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.2s ease;
+}
+
+.dropdown-section details[open] summary::before {
+    display: none;
+}
+
+.dropdown-section details[open] summary::after{
+    content: '-';
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.2s ease;
+}
+
+/* Smooth animation for content */
+.dropdown-section details .text {
+    animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.layout .sub-heading {
+    /* position: relative; */
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: var(--heading-desktop-h5-font-family);
+    font-weight: var(--heading-desktop-h5-font-weight);
+    color: var(--semantic-text-primary);
+    font-size: var(--heading-desktop-h5-font-size);
+    letter-spacing: var(--heading-desktop-h5-letter-spacing);
+    line-height: var(--heading-desktop-h5-line-height);
+    font-style: var(--heading-desktop-h5-font-style);
+  }
+
+  .layout .dropdown-text {
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: var( --text-regular-normal-font-family);
+    font-weight: var(--text-regular-normal-font-weight);
+    color: var(--semantic-text-primary);
+    font-size: var(--text-regular-normal-font-size);
+    letter-spacing: var(--text-regular-normal-letter-spacing);
+    line-height: var(--text-regular-normal-line-height);
+    font-style: var(--text-regular-normal-font-style);
+  }
+
+  .layout .dropdown-text#education-text {
+    border-left: 1.5px solid var(--primitive-color-highlight);
+    padding-left: 16px;
+
+  }
+
+  .layout .intro-text {
+    /* position: relative; */
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: var(--text-medium-normal-font-family);
+    font-weight: var(--text-medium-normal-font-weight);
+    color: var(--semantic-text-primary);
+    font-size: var(--text-medium-normal-font-size);
+    letter-spacing: var(--text-medium-normal-letter-spacing);
+    line-height: var(--text-medium-normal-line-height);
+    font-style: var(--text-medium-normal-font-style);
+  }
