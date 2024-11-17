@@ -597,6 +597,9 @@
     letter-spacing: var(--text-regular-normal-letter-spacing);
     line-height: var(--text-regular-normal-line-height);
     font-style: var(--text-regular-normal-font-style);
+
+    border-left: 1.5px solid var(--primitive-color-highlight);
+    padding-left: 16px;
   }
 
   .layout .dropdown-text#education-text {
@@ -604,7 +607,18 @@
     padding-left: 16px;
 
   }
-
+  .layout .dropdown-note {
+    align-self: stretch;
+    margin-top: -1px;
+    margin-left: 16px;
+    font-family: var(--text-small-light-font-family);
+    font-weight: var(--text-small-light-font-weight);
+    color: var(--semantic-text-primary);
+    font-size: var(--text-small-light-font-size);
+    letter-spacing: var(--text-small-light-letter-spacing);
+    line-height: var(--text-small-light-line-height);
+    font-style: var(--text-small-light-font-style);
+  }
   .layout .intro-text {
     /* position: relative; */
     align-self: stretch;
@@ -616,4 +630,19 @@
     letter-spacing: var(--text-medium-normal-letter-spacing);
     line-height: var(--text-medium-normal-line-height);
     font-style: var(--text-medium-normal-font-style);
+  }
+  .layout .dropdown-text#title {
+    font-family: var(--text-regular-semi-bold-font-family);
+    font-weight: var(--text-regular-semi-bold-font-weight);
+    color: var(--semantic-text-primary);
+    font-size: var(--text-regular-semi-bold-font-size);
+    letter-spacing: var(--text-regular-semi-bold-letter-spacing);
+    line-height: var(--text-regular-semi-bold-line-height);
+    font-style: var(--text-regular-semi-bold-font-style);
+  }
+  .layout#about {
+    padding-top: 182px;
+  }
+  .layout .intro-text .highlight {
+    color: var(--primitive-color-highlight);
   }
