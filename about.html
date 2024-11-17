@@ -20,8 +20,8 @@
           <div id="contact" class="text-wrapper">
             <a href="portfolio.html">Portfolio</a>
             <div class="dropdown-content">
-              <a href="portfolio.html#product-design">Service</a>
-              <a href="portfolio.html#service-design">Product</a>
+              <a href="portfolio.html#service-design">Service</a>
+              <a href="portfolio.html#product-design">Product</a>
               <a href="portfolio.html#furniture-design">Furniture</a>
               <a href="portfolio.html#others">& more</a>
             </div>
@@ -41,7 +41,12 @@
 
     <div class="layout" id="about">
       <div class="container">
-        <img class="placeholder-image" src="intro-headshot.jpg" />
+        <div class="placeholder-image-container">
+            <img class="placeholder-image" src="intro-headshot.jpg" />
+            <div class="expand-text">Click to Expand</div>
+            <img class="expanded-image" src="intro-headshot-expand.jpg" />
+        </div>
+
         <div class="content">
             <p class="heading">Connie Huang</p>
             <p class="intro-text">
@@ -154,3 +159,22 @@
     </div>
   </body>
 </html>
+
+<script>
+    document.querySelector('.expand-text').addEventListener('click', function() {
+        const expandText = this;
+        const expandedImage = document.querySelector('.expanded-image');
+
+        expandedImage.classList.toggle('show'); // Toggle visibility of the expanded image
+        if (expandText.innerText === "Click to Expand") {
+            expandText.innerText = "Nope.";
+        } else {
+            expandText.innerText = "Click to Expand"; // Optionally toggle back
+        }
+        // Move the .expand-text under the .expanded-image
+        const container = expandText.parentElement;
+        container.appendChild(expandText);
+
+        expandText.style.marginTop = "10px"; // Optional: Add spacing under the expanded image
+    });
+</script>

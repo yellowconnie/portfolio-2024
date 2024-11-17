@@ -1,3 +1,20 @@
+body {
+    background-color: var(--primitive-color-light);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    width: 1440px;
+    align-items: center;
+    gap: 80px;
+    padding: 112px 64px;
+    position: relative;
+}
+
 .dp-layout {
     display: flex;
     flex-direction: column;
@@ -646,3 +663,54 @@
   .layout .intro-text .highlight {
     color: var(--primitive-color-highlight);
   }
+
+.layout .placeholder-image-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.layout .placeholder-image {
+    display: flex;
+    align-self: stretch;
+    width: 100%;
+    height: 100%;
+    padding-left: 112px;
+    object-fit: cover;
+    text-align: center;
+}
+
+.expand-text {
+    cursor: pointer;
+    font-family: var(--text-regular-normal-font-family);
+    font-weight: var(--text-regular-normal-font-weight);
+    color: var(--text-decorate-dark);
+    font-size: var(--text-regular-normal-font-size);
+    letter-spacing: var(--text-regular-normal-letter-spacing);
+    line-height: var(--text-regular-normal-line-height);
+    margin-top: 12px;
+    transition: color 0.3s ease;
+    margin-top: 10px; /* Adjust spacing as necessary */
+    left: 60%;
+}
+
+.expand-text:hover {
+    color: var(--primitive-color-highlight);
+}
+
+.expand-text:hover::after {
+    display: none;
+}
+
+.expanded-image {
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding-left: 112px;
+    object-fit: cover;
+}
+
+.expanded-image.show {
+    display: flex;
+}
