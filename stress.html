@@ -10,6 +10,11 @@
     <title>PunchMe</title>
 </head>
 <body>
+    <div class="construction-banner">
+        <div class="construction-content">
+            This project is not fully uploaded yet 🚧 But welcome in!
+        </div>
+    </div>
     <div id="root"></div>
     <!-- <script src="index.js"></script>
     <script src="sketch.js"></script> -->
@@ -311,27 +316,27 @@
                         to the sound sensor, required careful wiring and testing to guarantee seamless 
                         functionality.
                     </p>
-                    <img class="icon-relume" src="img/relume.svg" />
+                    <img class="icon-relume" src="arrow-icon-down.png" />
                     <div id="process" class="text-wrapper">Write the Code</div>
                     <img id="challenge" class="placeholder-image" src="challenge1.png" alt="Crutches">
                     <p id="process" class="p">A simple task, like turning off the blinking LED after 15 seconds, took me 
                         considerable time to code. Multiple iterations were necessary to ensure proper timing 
                         and integration with other components.
                     </p>
-                    <img class="icon-relume" src="img/relume.svg" />
+                    <img class="icon-relume" src="arrow-icon-down.png" />
                     <div id="process" class="text-wrapper">Testing/Troubleshooting</div>
                     <img id="challenge" class="placeholder-image" src="challenge1.png" alt="Crutches">
                     <p id="process" class="p">Debugging both the hardware and software simultaneously added complexity, 
                         making this phase particularly challenging.
                     </p>
-                    <img class="icon-relume" src="img/relume.svg" />
+                    <img class="icon-relume" src="arrow-icon-down.png" />
                     <div id="process" class="text-wrapper" >Enclosure & Sculptural Design</div>
                     <img id="challenge" class="placeholder-image" src="challenge1.png" alt="Crutches">
                     <p id="process" class="p">Crafting the silicone sculpture was costly and required precision. 
                         Balancing aesthetics with functionality, while managing production costs, 
                         was a major hurdle in achieving the final product.
                     </p>
-                    <img class="icon-relume" src="img/relume.svg" />
+                    <img class="icon-relume" src="arrow-icon-down.png" />
                     <div id="process" class="text-wrapper" >Test & Demonstrate</div>
                     <img id="challenge" class="placeholder-image" src="challenge1.png" alt="Crutches">
                 </div>
@@ -434,5 +439,10 @@
     </div>
 
     <!-- <script src="dist/bundle.js"></script> -->
+    <script>
+        setTimeout(() => {
+          document.querySelector('.construction-banner').classList.add('fade-out');
+        }, 3000);
+    </script>
 </body>
 </html>
