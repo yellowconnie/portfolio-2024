@@ -1604,5 +1604,8 @@ body {
   }
   .process-gallery .reflection{
     gap: 8px;
-}
+  }
+  .feature-layout .content{
+    gap: 8px;
+  }
 }
