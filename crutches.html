@@ -587,16 +587,50 @@
     document.addEventListener('DOMContentLoaded', function() {
         const popup = document.querySelector('.mobile-popup');
         const closeIcon = document.querySelector('.close-icon');
-
-        // Check if user has already closed the popup
-        if (!localStorage.getItem('popupClosed')) {
-            popup.style.display = 'flex';
+        
+        // Function to check if device is iOS
+        function isIOS() {
+            return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
         }
 
-        closeIcon.addEventListener('click', function() {
+        // Function to handle popup display
+        function showPopup() {
+            if (!localStorage.getItem('popupClosed')) {
+                popup.style.display = 'flex';
+                
+                // For iOS devices, add additional body styling
+                if (isIOS()) {
+                    document.body.style.position = 'fixed';
+                    document.body.style.width = '100%';
+                }
+            }
+        }
+
+        // Function to handle popup closing
+        function closePopup() {
             popup.classList.add('hidden');
-            // Store that user has closed the popup
+            popup.style.display = 'none';
+            
+            // Reset body styling for iOS
+            if (isIOS()) {
+                document.body.style.position = '';
+                document.body.style.width = '';
+            }
+            
             localStorage.setItem('popupClosed', 'true');
+        }
+
+        // Show popup on page load
+        showPopup();
+
+        // Add click event listener to close button
+        closeIcon.addEventListener('click', closePopup);
+        
+        // Add click event listener to background for closing
+        popup.addEventListener('click', function(e) {
+            if (e.target === popup) {
+                closePopup();
+            }
         });
     });
 </script>
