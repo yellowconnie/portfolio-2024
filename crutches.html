@@ -10,6 +10,15 @@
     <title>Crutches Redesign</title>
 </head>
 <body>
+    <div class="mobile-popup" id="mobilePopup">
+        <div class="popup-content">
+            <button class="close-icon" aria-label="Close popup">×</button>
+            <p>
+                I suggest viewing this page on a larger screen for better readability, 
+                but if you insist, welcome!
+            </p>
+        </div>
+    </div>
     <div id="root"></div>
     <!-- <script src="index.js"></script>
     <script src="sketch.js"></script> -->
@@ -573,3 +582,21 @@
     <!-- <script src="dist/bundle.js"></script> -->
 </body>
 </html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const popup = document.querySelector('.mobile-popup');
+        const closeIcon = document.querySelector('.close-icon');
+
+        // Check if user has already closed the popup
+        if (!localStorage.getItem('popupClosed')) {
+            popup.style.display = 'flex';
+        }
+
+        closeIcon.addEventListener('click', function() {
+            popup.classList.add('hidden');
+            // Store that user has closed the popup
+            localStorage.setItem('popupClosed', 'true');
+        });
+    });
+</script>
