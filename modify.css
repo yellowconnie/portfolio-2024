@@ -1222,3 +1222,228 @@ body {
     display: none;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 0px 24px;
+  }
+
+  .navbar .container {
+    gap: 16px;
+  }
+
+  .navbar .logo {
+    font-size: var(--text-regular-extra-bold-font-size);
+  }
+
+  .navbar .column {
+    gap: 16px;
+  }
+
+  .portfolio-header {
+    padding: 64px 24px;
+  }
+
+  .portfolio-header .content {
+    gap: 32px;
+  }
+
+  .portfolio-header .heading {
+    font-size: var(--heading-mobile-h3-font-size);
+    line-height: var(--heading-mobile-h3-line-height);
+  }
+
+  .portfolio-header .overview {
+    font-size: var(--text-regular-normal-font-size);
+    line-height: var(--text-regular-normal-line-height);
+  }
+
+  .portfolio-header .header-image {
+    min-height: 60%;
+    max-height: 300px;
+  }
+
+  /* Layout adjustments */
+  .aim-layout,
+  .feature-layout,
+  .process-map-layout,
+  .challenge-layout,
+  .gallery-content,
+  .process-gallery {
+    padding: 64px 24px;
+  }
+
+  /* Image sizing */
+  .feature-layout .painpoint-image,
+  .gallery-content .placeholder-image,
+  .challenge-layout .column:first-child {
+    width: 100%; /* Full width on mobile */
+  }
+
+  .process-gallery .placeholder-image {
+    width: 100%; /* Single column on mobile */
+    aspect-ratio: 16/9; /* More suitable for mobile viewing */
+  }
+
+  /* Text sizing */
+  .heading {
+    font-size: var(--heading-mobile-h4-font-size);
+    line-height: var(--heading-mobile-h4-line-height);
+  }
+
+  .subheading {
+    font-size: var(--text-regular-normal-font-size);
+    line-height: var(--text-regular-normal-line-height);
+  }
+
+  .text,
+  .p,
+  .feature-text {
+    font-size: var(--text-small-normal-font-size);
+    line-height: var(--text-small-normal-line-height);
+  }
+
+  /* Spacing adjustments */
+  .list {
+    gap: 12px;
+  }
+
+  .list-item {
+    gap: 8px;
+  }
+
+  /* Container adjustments */
+  .container,
+  .container2 {
+    gap: 24px;
+  }
+
+  .column {
+    gap: 16px;
+  }
+
+  /* Specific layout adjustments */
+  .feature-layout#mech-detail .feature-image {
+    width: 80%;
+  }
+
+  .process-gallery .content-1,
+  .process-gallery .content-2 {
+    gap: 16px;
+  }
+
+  .process-gallery .reflection {
+    max-width: 100%;
+  }
+
+  /* Additional spacing adjustments */
+  .section-title {
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .row {
+    gap: 8px;
+  }
+
+  /* Dropdown adjustments */
+  .dropdown-section summary {
+    padding-right: 40px;
+  }
+
+  /* Tags adjustments */
+  .tags {
+    gap: 8px;
+  }
+
+  .tag {
+    padding: 4px 12px;
+    font-size: var(--text-small-normal-font-size);
+  }
+  .aim-layout .heading#project-purpose {
+    font-size: var(--text-large-semi-bold-font-size);
+    font-weight: var(--text-large-semi-bold-font-weight);
+    line-height: var(--text-large-semi-bold-line-height);
+  }
+
+  .aim-layout .aim-div {
+    margin-top: 24px;
+  }
+
+  .aim-layout .section-title {
+    margin-bottom: 0;
+  }
+
+  .feature-layout#mech-detail .container1 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .feature-layout#mech-detail .content1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .feature-layout#mech-detail .feature-image {
+    width: 100%;
+    height: auto;
+    margin: 24px 0;
+    order: unset; /* Remove previous order setting */
+  }
+
+  .feature-layout#mech-detail br {
+    display: none;
+  }
+
+  /* Adjust spacing for remaining content */
+  .feature-layout#mech-detail .subheading {
+    margin-top: 24px;
+  }
+  .feature-layout#mech-detail .container1 {
+    gap: 0px;
+  }
+  .challenge-layout .row {
+    flex-direction: column;
+  }
+
+  .challenge-layout .column {
+    width: 100%;
+  }
+  .challenge-layout .section-title {
+    padding-top: 0;
+  }
+  /* First column containing images */
+  .challenge-layout .column:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+  }
+
+  .challenge-layout .placeholder-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin: 0; /* Remove any existing margins */
+  }
+
+  /* Specific image adjustments */
+  .challenge-layout .placeholder-image#challenge2 {
+    width: 100%;
+    max-height: 500px; 
+
+  }
+
+  /* Text content spacing */
+  .challenge-layout .text-wrapper {
+    margin-top: 24px;
+  }
+
+  .challenge-layout .p {
+    margin-bottom: 12px;
+  }
+  .challenge-layout .placeholder-image#challenge1{
+    display: none;
+  }
+}
