@@ -714,3 +714,7 @@ body {
 .expanded-image.show {
     display: flex;
 }
+
+.feature-layout .highlight {
+    color: var(--primitive-color-highlight);
+}
