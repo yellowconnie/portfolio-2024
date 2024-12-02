@@ -1493,7 +1493,9 @@ body {
     font-weight: var(--text-large-semi-bold-font-weight);
     line-height: var(--text-large-semi-bold-line-height);
   }
-
+  .aim-layout{
+    gap: 16px;
+  }
   .aim-layout .aim-div {
     margin-top: 24px;
   }
@@ -1587,6 +1589,10 @@ body {
   }
   .process-map-layout .process-map-div{
     margin-top: 8px;
+    border-left: 2px solid var(--text-decorate-dark);
+  }
+  .process-map-layout .row{
+    margin-left: 16px;
   }
   .process-map-layout .column{
     gap: 8px;
@@ -1606,6 +1612,6 @@ body {
     gap: 8px;
   }
   .feature-layout .content{
-    gap: 8px;
+    gap: 16px;
   }
 }
