@@ -206,6 +206,13 @@
   padding-left: 112px;
   object-fit: cover;
 }
+.layout .title{
+  display: flex;
+  align-self: stretch;
+  width: 40%;
+  padding-left: 112px;
+  object-fit: cover;
+}
 .layout .content {
   display: flex;
   flex-direction: column;

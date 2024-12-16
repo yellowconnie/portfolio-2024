@@ -376,6 +376,15 @@ body {
     /* flex: 1;
     flex-grow: 1; */
 }
+.feature-layout .painpoint-image#reco-moodboard {
+    position: relative;
+    width: 40%;
+    height: 640px;
+    object-fit: contain;
+    flex: 1;
+    flex-grow: 1;
+    
+}
 .feature-layout .painpoint-image#freshie-problem {
     position: relative;
     width: 40%;
@@ -424,10 +433,23 @@ body {
     position: relative;
     align-items: flex-start;
 }
+.challenge-layout .placeholder-video#process {
+    width: 720px;
+    height: 360px;
+    object-fit: cover;
+    position: relative;
+    align-items: flex-start;
+}
 .challenge-layout .column#border {
     border-right: 3.5px solid var(--text-decorate-dark);
     width: 80px;
     height: 6616px;
+    margin-top: 122px;
+}
+.challenge-layout .column#reco-border {
+    border-right: 3.5px solid var(--text-decorate-dark);
+    width: 80px;
+    height: 5150px;
     margin-top: 122px;
 }
 .aim-layout .thin-decorate {
@@ -1204,6 +1226,12 @@ body {
     line-height: var(--text-medium-normal-line-height);
     margin-top: 8px;
   }
+  .challenge-layout .arrow-icon-down {
+    position: relative;
+    width: 8px;
+    height: 8px;
+    object-fit: cover;
+}
   .gallery-content {
     width: 100%;
     padding: 80px 40px;
@@ -1614,4 +1642,18 @@ body {
   .feature-layout .content{
     gap: 16px;
   }
+}
+.gallery-content .gallery#reco {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-content .full-image#reco {
+    width: calc(33.33% - 16px); /* Subtracting gap space */
+    height: auto;
+    object-fit: cover;
 }
