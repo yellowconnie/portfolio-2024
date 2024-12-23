@@ -299,14 +299,21 @@
   --semantic-border-alternate: var(--primitive-color-neutral-white);
   --semantic-border-success: var(--primitive-color-system-success-green);
   --semantic-border-error: var(--primitive-color-system-error-red);
-  --semantic-text-primary: var(--primitive-color-neutral-black-duplicate);
+  --semantic-text-primary: #e2d7bc;
   --semantic-link-primary: var(--primitive-color-neutral-black);
   --semantic-link-secondary: var(--primitive-color-neutral-neutral);
   --semantic-link-alternate: var(--primitive-color-neutral-white);
-  --semantic-text-secondary: var(--primitive-color-neutral-neutral-light);
+  --semantic-text-secondary:  #b1ab9a;
   --semantic-text-alternate: var(--primitive-color-neutral-white-duplicate);
   --semantic-text-success: var(--primitive-color-system-success-green);
   --semantic-text-error: var(--primitive-color-system-error-red);
+  --semantic-tag-background: #b1ab9a;
+  --semantic-tag-background-transparent: rgba(177, 171, 154, 0.5);
+  --semantic-tag-text: #24170e;
+  --semantic-button-highlight: #DE1A1A;
+  --semantic-button-primary: #e2d7bc;
+  --semantic-button-secondary: #24170e;
+  --semantic-button-border: #e2d7bc;
   --primitive-color-brand-black: rgba(0, 0, 0, 1);
   --primitive-color-brand-light: rgb(247, 244, 232);
   --primitive-color-neutral-black: rgba(0, 0, 0, 1);
@@ -324,8 +331,8 @@
   --primitive-color-neutral-neutral-darkest: rgba(17, 17, 17, 1);
   --primitive-color-neutral-white-duplicate: rgba(255, 255, 255, 1);
   --primitive-color-neutral-black-duplicate: rgba(0, 0, 0, 1);
-  --primitive-color-highlight: #fe4a49;
-  --primitive-color-light: #faf8eb;
-  --text-decorate-dark: #4b2126;
+  --primitive-color-highlight: #e2d7bc;
+  --primitive-color-light: #24170e;
+  --text-decorate-dark:#DE1A1A;
   --text-hover-funny: #fff700;
 }

@@ -19,12 +19,16 @@
       <div class="container">
         <div class="logo">
           <div id="logo-name" class="content"><a href="index.html">YC</a></div>
-          <div id="full-name" class="content"><a href="index.html">YellowConnie</a></div>  
+          <div id="full-name" class="content"><a href="index.html">YellowConnie</a></div>
+          <img id="logo-headshot" class="content" src="logo-headshot.jpeg" alt="my head">
+          <div class="speech-bubble">
+            I design with purpose, empathy, and strategic insight.
+          </div>
         </div>
         <div class="column">
           <div class="text-wrapper"><a href="about.html">About Me</a></div>
           <div id="contact" class="text-wrapper">
-            <a href="portfolio.html">Portfolio</a>
+            <a href="portfolio.html">Work</a>
             <div class="dropdown-content">
               <a href="portfolio.html#product-design">Service</a>
               <a href="portfolio.html#service-design">Product</a>
@@ -32,7 +36,7 @@
               <a href="portfolio.html#others">& more</a>
             </div>
           </div>
-          <div class="text-wrapper"><a href="google.com">Services</a></div>
+          <!-- <div class="text-wrapper"><a href="google.com">Services</a></div> -->
           <div id="contact" class="text-wrapper">
             <a href="contact.html">Contact</a>
             <div class="dropdown-content">
@@ -60,23 +64,54 @@
         </div>
       </div>
     </div>
-
+    
     <div class="layout">
       <div class="container">
-        <div class="title">
+        <div class="content" id="philosophy">
           <p class="heading" id="philosophy">Purpose & Balance</p>
-        </div>
-        <div class="content">
           <p class="text">
-            Connie Huang bridges the gap between ideation and execution in her design 
-            by adopting a systems perspective.
+            Connie Huang bridges the gap between ideation and execution in 
+            her design by adopting a systems perspective.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="layout">
+      <div class="container">
+        <div class="content" id="philosophy-right">
+          <p class="heading" id="philosophy">Purpose & Balance</p>
+          <p class="text">
+            Connie Huang bridges the gap between ideation and execution in 
+            her design by adopting a systems perspective.
           </p>
         </div>
       </div>
     </div>
 
-
     <div class="layout">
+      <div class="container">
+        <div class="content">
+          <p class="heading" id="value">
+            I Design With 
+          </p>
+          <div class="value-cards">
+            <div class="card">Agility</div>
+            <div class="card">Holistic</div>
+            <div class="card">Empathy</div>
+            <div class="card">Innovation</div>
+            <div class="card">Functionality</div>
+            <div class="card">Aesthetics</div>
+            <div class="card">Engineering & Developing</div>
+            <div class="card">Adaptability</div>
+            <div class="card">Inclusivity</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- ABOUT ME HIDDEN -->
+    <!-- <div class="layout">
       <div class="container">
         <img class="placeholder-image" src="intro-headshot.jpg" />
         <div class="content">
@@ -98,11 +133,11 @@
           </ol>
           <br>
           <p class="note">
-            Fun fact: Connie's last name "Huang" means "yellow" in Mandarin, that's why she goes by "YellowConnie" 🙈✨ 
+            Fun fact: Connie's last name "Huang" means "yellow" in Mandarin, that's why she goes by "YellowConnie" 🙈��� 
           </p>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="layout">
       <div class="container">
@@ -143,7 +178,7 @@
           <div class="tab-horizontal-4">
             <div class="short-heading-4">& More</div>
             <p class="text-content-4">
-              Being open to new opprtunities and challenges is what makes me grow and creative.
+              that are playful and creative.
             </p>
             <img src="product-snap.png" alt="Product Design" id="img1"/>
             <div class="tabs-link"><a href="portfolio.html#others"> -> what I've made</a></div>
@@ -163,5 +198,62 @@
         document.querySelector('.construction-banner').classList.add('fade-out');
       }, 3000);
     </script>
+    <script>
+      // document.querySelectorAll('.card').forEach(card => {
+      //   card.style.setProperty('--random', Math.random() * 2 - 1);
+      // });
+
+      const cards = document.querySelectorAll('.card');
+      const valueCards = document.querySelector('.value-cards');
+
+      // Calculate container dimensions
+      const containerWidth = valueCards.offsetWidth - 300; // Accounting for padding and margins
+      const containerHeight = 200; // Fixed height for consistent layout
+
+      // Define grid
+      const columns = 5;
+      const rows = 2;
+      const cellWidth = containerWidth / columns;
+      const cellHeight = containerHeight / rows;
+
+      // Position cards in a grid
+      cards.forEach((card, index) => {
+        // Calculate grid position
+        const column = index % columns;
+        const row = Math.floor(index / columns);
+        
+        // Calculate base position (center of each cell)
+        const baseX = (column * cellWidth) + (cellWidth / 2);
+        const baseY = (row * cellHeight) + (cellHeight / 2);
+        
+        // Add slight randomness (±10% of cell size)
+        const randomX = (Math.random() - 0.5) * cellWidth * 0.2;
+        const randomY = (Math.random() - 0.5) * cellHeight * 0.2;
+        
+        // Set position
+        card.style.setProperty('--base-x', baseX + randomX);
+        card.style.setProperty('--base-y', baseY + randomY);
+      });
+
+      // Mouse movement effect
+      valueCards.addEventListener('mousemove', (e) => {
+        const rect = valueCards.getBoundingClientRect();
+        const mouseX = (e.clientX - rect.left) / rect.width - 0.5;
+        const mouseY = (e.clientY - rect.top) / rect.height - 0.5;
+
+        cards.forEach(card => {
+          card.style.setProperty('--move-x', mouseX);
+          card.style.setProperty('--move-y', mouseY);
+        });
+      });
+
+      // Reset movement when mouse leaves
+      valueCards.addEventListener('mouseleave', () => {
+        cards.forEach(card => {
+          card.style.setProperty('--move-x', 0);
+          card.style.setProperty('--move-y', 0);
+        });
+      });    
+  </script>
   </body>
 </html>

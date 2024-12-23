@@ -27,13 +27,14 @@
 
 .navbar .logo {
   display: flex;
-  align-items: flex-start;
-  /* position: relative; */
+  align-items: center;
+  position: relative;
+  gap: 8px;
   flex: 1;
   flex-grow: 1;
   font-family: var(--text-large-extra-bold-font-family);
   font-weight: var(--text-large-extra-bold-font-weight);
-  color: var(--text-decorate-dark);
+  color: var(--primitive-color-highlight);
   font-size: var(--text-large-extra-bold-font-size);
   letter-spacing: var(--text-large-extra-bold-letter-spacing);
   line-height: var(--text-large-extra-bold-line-height);
@@ -41,16 +42,77 @@
   font-style: var(--text-large-extra-bold-font-style);
 }
 .navbar .content a{
-  color: var(--text-decorate-dark);
+  color: var(--primitive-color-highlight);
 }
 .navbar .content#full-name{
   display: none;
 }
+.navbar .content#logo-headshot{
+  display: none;
+  position: absolute;
+  left: 136px;
+  top: 50%;
+  transform: translateY(-50%);
+}
 .logo:hover .content#full-name{
   display: block;
 }
+.logo:hover .content#logo-headshot{
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  animation: fadeIn 0.3s ease-in-out;
+}
 .logo:hover .content#logo-name{
   display: none;
+}
+
+/* Add new speech bubble styles */
+.navbar .speech-bubble {
+  display: none;
+  position: absolute;
+  left: 200px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--semantic-tag-background);
+  border-radius: 60px;
+  padding: 8px 12px;
+  font-size: var(--text-small-light-font-size);
+  font-family: var(--text-small-light-font-family);
+  font-weight: var(--text-small-light-font-weight);
+  color: var(--semantic-tag-text);
+  width: max-content;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Speech bubble triangle */
+.navbar .speech-bubble:before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 8px 10px 8px 0;
+  border-style: solid;
+  border-color: transparent var(--semantic-tag-background) transparent transparent;
+}
+
+/* Show speech bubble on logo hover */
+.logo:hover .speech-bubble {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-10px, -50%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
 }
 .navbar .company-logo {
   /* position: relative; */
@@ -80,7 +142,7 @@
   font-style: var(--text-regular-normal-font-style);
 }
  .text-wrapper a{
-  color: var(--text-decorate-dark);
+  color: var(--primitive-color-highlight);
   text-decoration: none;
   /* transition: 0.3s ease; */
 }
@@ -151,7 +213,7 @@
   position: relative;
   font-family: var(--text-medium-light-font-family);
   font-weight: var(--text-medium-light-font-weight);
-  color: var(--text-decorate-dark);
+  color: var(--semantic-text-secondary);
   font-size: var(--text-medium-light-font-size);
   text-align: center;
   letter-spacing: var(--text-medium-light-letter-spacing);
@@ -159,9 +221,9 @@
   font-style: var(--text-medium-light-font-style);
 }
 .specialties-link a{
-  color: var(--text-decorate-dark);
+  color: var(--semantic-text-secondary);
   text-decoration: underline;
-  text-decoration-color: var(--primitive-color-highlight);
+  text-decoration-color: var(--semantic-button-highlight);
   text-underline-offset: 4px;
   text-decoration-thickness: 1px;
 }
@@ -222,26 +284,41 @@
   flex: 1;
   flex-grow: 1;
 }
-
+.layout .content#philosophy{
+  padding-left: 96px;
+  gap: 16px;
+  max-width: 700px;
+}
+.layout .content#philosophy-right{
+  padding-right: 96px;
+  gap: 16px;
+  max-width: 700px;
+  align-items: right;
+  text-align: right;
+  margin-left: auto;
+}
 .layout .heading {
   /* position: relative; */
   align-self: stretch;
   margin-top: -1px;
-  font-family: var(--heading-desktop-h3-font-family);
-  font-weight: var(--heading-desktop-h3-font-weight);
+  font-family: var(--heading-desktop-h2-font-family);
+  font-weight: var(--heading-desktop-h2-font-weight);
   color: var(--semantic-text-primary);
-  font-size: var(--heading-desktop-h3-font-size);
-  letter-spacing: var(--heading-desktop-h3-letter-spacing);
-  line-height: var(--heading-desktop-h3-line-height);
-  font-style: var(--heading-desktop-h3-font-style);
+  font-size: var(--heading-desktop-h2-font-size);
+  letter-spacing: var(--heading-desktop-h2-letter-spacing);
+  line-height: var(--heading-desktop-h2-line-height);
+  font-style: var(--heading-desktop-h2-font-style);
+  margin-bottom: 32px;
 }
-
+.layout .heading#philosophy{
+  margin-bottom: 0px;
+}
 .layout .text {
   /* position: relative; */
   align-self: stretch;
   font-family: var(--text-medium-normal-font-family);
   font-weight: var(--text-medium-normal-font-weight);
-  color: var(--semantic-text-primary);
+  color: var(--semantic-text-secondary);
   font-size: var(--text-medium-normal-font-size);
   letter-spacing: var(--text-medium-normal-letter-spacing);
   line-height: var(--text-medium-normal-line-height);
@@ -485,7 +562,7 @@
 .text-content-1 {
   font-family: var(--text-small-normal-font-family);
   font-weight: var(--text-small-normal-font-weight);
-  color: var(--semantic-text-primary);
+  color: var(--semantic-text-secondary);
   font-size: var(--text-small-normal-font-size);
   letter-spacing: var(--text-small-normal-letter-spacing);
   line-height: var(--text-small-normal-line-height);
@@ -511,7 +588,7 @@
 .text-content-2 {
   font-family: var(--text-small-normal-font-family);
   font-weight: var(--text-small-normal-font-weight);
-  color: var(--semantic-text-primary);
+  color: var(--semantic-text-secondary);
   font-size: var(--text-small-normal-font-size);
   letter-spacing: var(--text-small-normal-letter-spacing);
   line-height: var(--text-small-normal-line-height);
@@ -537,7 +614,7 @@
 .text-content-3 {
   font-family: var(--text-small-normal-font-family);
   font-weight: var(--text-small-normal-font-weight);
-  color: var(--semantic-text-primary);
+  color: var(--semantic-text-secondary);
   font-size: var(--text-small-normal-font-size);
   letter-spacing: var(--text-small-normal-letter-spacing);
   line-height: var(--text-small-normal-line-height);
@@ -564,7 +641,7 @@
 .text-content-4 {
   font-family: var(--text-small-normal-font-family);
   font-weight: var(--text-small-normal-font-weight);
-  color: var(--semantic-text-primary);
+  color: var(--semantic-text-secondary);
   font-size: var(--text-small-normal-font-size);
   letter-spacing: var(--text-small-normal-letter-spacing);
   line-height: var(--text-small-normal-line-height);
@@ -694,10 +771,10 @@
   padding: 4px 8px;
   position: relative;
   flex: 0 0 auto;
-  background-color: var(--primitive-color-neutral-neutral-lightest);
+  background-color: var(--semantic-tag-background);
   font-family: var(--text-small-normal-font-family);
   font-weight: var(--text-small-normal-font-weight);
-  color: var(--semantic-text-primary);
+  color: var(--semantic-tag-text);
   font-size: var(--text-small-normal-font-size);
   letter-spacing: var(--text-small-normal-letter-spacing);
   line-height: var(--text-small-normal-line-height);
@@ -735,8 +812,8 @@
 }
 
 .dropdown-content a:hover {
-  background-color: #49282c1b;
-  transition: 0.4s ease;
+  background-color: #e2d7bc55;
+  transition: 1s ease;
   border-radius: 32px;
   display: inline-block;
 }
@@ -746,7 +823,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(73, 40, 44, 0.5);
+  background-color: var(--semantic-tag-background-transparent);
   z-index: 1000;
   padding: 10px 0;
   text-align: center;
@@ -766,7 +843,7 @@
   margin: 0 auto;
   padding: 8px 20px;
   font-size: var(--text-small-normal-font-size);
-  color: var(--primitive-color-light);
+  color: var(--semantic-tag-text);
   font-family: var(--text-small-normal-font-family);
   font-weight: var(--text-small-normal-font-weight);
   letter-spacing: var(--text-small-normal-letter-spacing);
@@ -782,3 +859,53 @@
       transform: translateY(0);
   }
 }
+
+.layout .heading#value {
+  padding-left: 100px;
+}
+.value-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: flex-start;
+  margin-top: 20px;
+  padding-left: 100px;
+  position: relative;
+  min-height: 200px;
+  width: 100%;
+  perspective: 1000px;
+}
+
+.card {
+  background: var(--semantic-button-secondary);
+  padding: 24px 32px;
+  border-radius: 24px;
+  transition: transform 0.1s ease;
+  font-family: var(--heading-desktop-h3-font-family);
+  font-size: var(--text-desktop-body-font-size);
+  color: var(--semantic-button-primary);
+  border: 1px solid var(--semantic-button-border);
+  position: absolute;
+  transform: translate(
+    calc(var(--base-x) * 1px + var(--move-x) * 50px),
+    calc(var(--base-y) * 1px + var(--move-y) * 30px)
+  );
+}
+
+.card:hover {
+  transform: translate(
+    calc(var(--base-x) * 1px + var(--move-x) * 50px),
+    calc(var(--base-y) * 1px + var(--move-y) * 50px)
+  ) scale(1.10);
+  box-shadow: 1px 1px 10px var(--semantic-button-border);
+  background: none;
+  border: 1px solid var(--primitive-color-highlight);
+  font-family: var(--heading-desktop-h3-font-family);
+  font-size: var(--text-desktop-body-font-size);
+  color: var(--primitive-color-highlight);
+  z-index: 1;
+}
+
+
+
+
