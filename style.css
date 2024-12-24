@@ -227,18 +227,65 @@
   text-underline-offset: 4px;
   text-decoration-thickness: 1px;
 }
-.specialty1 {
+.specialty1, .specialty2, .specialty3, .specialty4, .specialty5 {
   padding-bottom: 6px;
 }
-.specialty2 {
-  padding-bottom: 6px;
+
+@keyframes fadeInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-.specialty3 {
-  padding-bottom: 6px;
+
+.specialties-link#specialty4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  gap: 16px;
+  animation: fadeInFromBottom 1.8s ease-out forwards;
 }
-.specialty4 {
-  padding-bottom: 6px;
+.header .specialty4-headshot {
+  display: block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50% ;
+
 }
+.header .specialty4 {
+  display: block;
+  position: relative;
+  background: var(--semantic-tag-background);
+  border-radius: 60px;
+  padding: 8px 12px;
+  font-size: var(--text-small-light-font-size);
+  font-family: var(--text-small-light-font-family);
+  font-weight: var(--text-small-light-font-weight);
+  color: var(--semantic-tag-text);
+  width: max-content;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Add speech bubble triangle */
+.header .specialty4:before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 8px 10px 8px 0;
+  border-style: solid;
+  border-color: transparent var(--semantic-tag-background) transparent transparent;
+}
+
 .layout {
   display: flex;
   flex-direction: column;
@@ -249,7 +296,10 @@
   position: relative;
   background-color: var(--primitive-color-light);
 }
-
+.layout#philosophy-left,
+.layout#philosophy-right {
+  padding: 64px 64px; 
+}
 .layout .container {
   display: flex;
   align-items: center;
@@ -287,7 +337,7 @@
 .layout .content#philosophy{
   padding-left: 96px;
   gap: 16px;
-  max-width: 700px;
+  max-width: 680px;
 }
 .layout .content#philosophy-right{
   padding-right: 96px;
@@ -879,7 +929,7 @@
 .card {
   background: var(--semantic-button-secondary);
   padding: 24px 32px;
-  border-radius: 24px;
+  border-radius: 12px;
   transition: transform 0.1s ease;
   font-family: var(--heading-desktop-h3-font-family);
   font-size: var(--text-desktop-body-font-size);
@@ -905,6 +955,8 @@
   color: var(--primitive-color-highlight);
   z-index: 1;
 }
+
+
 
 
 
