@@ -162,6 +162,10 @@
   flex: 0 0 auto;
 }
 
+.highlight{
+  color: var(--semantic-text-highlight);
+}
+
 .header {
   width: 1440px;
   height: 864px;
@@ -208,6 +212,9 @@
   font-style: var(--heading-desktop-h1-font-style);
 }
 
+.header .highlight{
+  color: var(--semantic-text-highlight);
+}
 .specialties-link{
   align-self: stretch;
   position: relative;
@@ -374,10 +381,17 @@
   line-height: var(--text-medium-normal-line-height);
   font-style: var(--text-medium-normal-font-style);
 }
-
+.highlight#philosophy-highlight{
+  font-family: var(--text-large-light-font-family);
+  font-weight: var(--text-large-light-font-weight);
+  font-size: 30px;
+  letter-spacing: var(--text-large-light-letter-spacing);
+  line-height: var(--text-large-light-line-height);
+  font-style: var(--text-large-light-font-style);
+}
 /* Add this new rule */
 .layout .text .highlight {
-  color: var(--primitive-color-highlight);
+  color: var(--semantic-text-highlight);
 }
 
 .layout .note{
@@ -947,12 +961,12 @@
     calc(var(--base-x) * 1px + var(--move-x) * 50px),
     calc(var(--base-y) * 1px + var(--move-y) * 50px)
   ) scale(1.10);
-  box-shadow: 1px 1px 10px var(--semantic-button-border);
-  background: none;
-  border: 1px solid var(--primitive-color-highlight);
+  box-shadow: 1px 1px 10px var(--semantic-button-highlight);
+  background: var(--semantic-button-primary);
+  border: 1px solid var(--semantic-button-highlight);
   font-family: var(--heading-desktop-h3-font-family);
   font-size: var(--text-desktop-body-font-size);
-  color: var(--primitive-color-highlight);
+  color: var(--semantic-button-highlight);
   z-index: 1;
 }
 

@@ -299,11 +299,12 @@
   --semantic-border-alternate: var(--primitive-color-neutral-white);
   --semantic-border-success: var(--primitive-color-system-success-green);
   --semantic-border-error: var(--primitive-color-system-error-red);
-  --semantic-text-primary: #e2d7bc;
   --semantic-link-primary: var(--primitive-color-neutral-black);
   --semantic-link-secondary: var(--primitive-color-neutral-neutral);
   --semantic-link-alternate: var(--primitive-color-neutral-white);
+  --semantic-text-primary: #e2d7bc;
   --semantic-text-secondary:  #b1ab9a;
+  --semantic-text-highlight: #DE1A1A;
   --semantic-text-alternate: var(--primitive-color-neutral-white-duplicate);
   --semantic-text-success: var(--primitive-color-system-success-green);
   --semantic-text-error: var(--primitive-color-system-error-red);
