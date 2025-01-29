@@ -845,7 +845,7 @@
   margin-top: -72px; /* Negative margin to offset the padding */
   scroll-margin-top: 72px; /* This ensures the scroll position accounts for the fixed navbar */
 }
-.layout#portfolio .tags {
+.layout .tags {
   display: flex;
   align-items: flex-start;
   gap: 8px;
@@ -855,16 +855,31 @@
   flex: 0 0 auto;
   padding-top: 8px;
 }
-.layout#portfolio .tag {
+.layout .tag-icon {
   display: inline-flex;
-  align-items: flex-start;
-  padding: 4px 8px;
+  align-items: center;
+  justify-content: center;
   position: relative;
   flex: 0 0 auto;
-  background-color: var(--semantic-tag-background);
+  width: 6px;
+  height: 6px;
+  background-color: var(--semantic-button-highlight);
+  border-radius: 50%;
+  margin: auto 6px auto 2px;
+}
+.layout .tag {
+  display: inline-flex;
+  align-items: flex-start;
+  padding: 4px 12px;
+  position: relative;
+  flex: 0 0 auto;
+  border-radius: 32px;
+  border: 1px solid var(--semantic-button-primary);
+  background-color: none;
+
   font-family: var(--text-small-normal-font-family);
   font-weight: var(--text-small-normal-font-weight);
-  color: var(--semantic-tag-text);
+  color: var(--semantic-text-primary);
   font-size: var(--text-small-normal-font-size);
   letter-spacing: var(--text-small-normal-letter-spacing);
   line-height: var(--text-small-normal-line-height);
@@ -968,8 +983,8 @@
 
 .card {
   background: var(--semantic-button-secondary);
-  padding: 24px 32px;
-  border-radius: 12px;
+  padding: 18px 24px;
+  border-radius: 3cm;
   transition: transform 0.1s ease;
   font-family: var(--heading-desktop-h3-font-family);
   font-size: var(--text-desktop-body-font-size);
@@ -996,7 +1011,59 @@
   z-index: 1;
 }
 
+.infinite-marquee {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  background-color: var(--primitive-color-light);
+  margin: 64px 0px 64px 0px;
+  align-items: center;
+  justify-content: center;
+}
 
+.marquee-content {
+  display: flex;
+  position: absolute;
+  animation: marquee 30s linear infinite;
+  gap: 32px;
+  align-items: center;
+  top: 25%;
+}
+
+.marquee-item {
+  flex-shrink: 0;
+  height: 200px;
+}
+
+.marquee-item img {
+  height: 100%;
+  width: 580px;
+  justify-content: center;
+  object-fit: cover;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.marquee-item:hover img {
+  transform: scale(1.05);
+  cursor: pointer;
+  border-radius: 16px;
+}
+
+@keyframes marquee {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-50%);
+  }
+}
+
+/* Pause animation on hover */
+.infinite-marquee:hover .marquee-content {
+  animation-play-state: paused;
+}
 
 
 
