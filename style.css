@@ -568,8 +568,7 @@
 
 .tab-horizontal-1,
 .tab-horizontal-2,
-.tab-horizontal-3,
-.tab-horizontal-4 {
+.tab-horizontal-3{
   width: 90%;
   height: 100%;
   border: 1px solid var(--semantic-tag-background-transparent);
@@ -900,7 +899,19 @@
   transform: scale(1.05);
   transition: 0.3s ease;
 }
-
+.tabs-link#more-projects a{
+  border: 1px solid var(--semantic-button-highlight);
+  background-color: var(--semantic-button-primary);
+  color: var(--semantic-button-highlight);
+  box-shadow: 1px 1px 10px var(--semantic-button-highlight);
+}
+.tabs-link#more-projects a:hover{
+  background-color: var(--semantic-button-highlight);
+  color: var(--semantic-button-primary);
+  box-shadow: none;
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
 .dropdown-content {
   display: none;
   position: absolute;
