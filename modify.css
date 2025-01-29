@@ -966,13 +966,44 @@ body {
   }
 
   .portfolio-header .tags {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    position: relative; 
+    align-self: stretch;
     width: 100%;
-    flex-wrap: wrap;
-    gap: 12px;
+    flex: 0 0 auto;
+    padding-top: 8px;
   }
-
+  .portfolio-header .tag-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        flex: 0 0 auto;
+        width: 6px;
+        height: 6px;
+        background-color: var(--semantic-button-highlight);
+        border-radius: 50%;
+        margin: auto 6px auto 2px;
+  }
   .portfolio-header .tag {
-    font-size: var(--text-small-semi-bold-font-size);
+    display: inline-flex;
+    align-items: flex-start;
+    padding: 4px 12px;
+    position: relative;
+    flex: 0 0 auto;
+    border-radius: 32px;
+    border: 1px solid var(--semantic-button-primary);
+    background-color: none;
+
+    font-family: var(--text-small-normal-font-family);
+    font-weight: var(--text-small-normal-font-weight);
+    color: var(--semantic-text-primary);
+    font-size: var(--text-small-normal-font-size);
+    letter-spacing: var(--text-small-normal-letter-spacing);
+    line-height: var(--text-small-normal-line-height);
+    font-style: var(--text-small-normal-font-style);
   }
 
   .portfolio-header .text-2,

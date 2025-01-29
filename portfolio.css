@@ -65,22 +65,46 @@
     align-self: stretch;
     width: 100%;
     flex: 0 0 auto;
-}
-.portfolio-header .tag {
+    padding-top: 8px;
+  }
+  .portfolio-header .tag-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        flex: 0 0 auto;
+        width: 6px;
+        height: 6px;
+        background-color: var(--semantic-button-highlight);
+        border-radius: 50%;
+        margin: auto 6px auto 2px;
+  }
+  .portfolio-header .tag {
     display: inline-flex;
     align-items: flex-start;
-    padding: 4px 8px;
+    padding: 4px 12px;
     position: relative;
     flex: 0 0 auto;
-    background-color: var(--primitive-color-neutral-neutral-lightest);
-}
+    border-radius: 32px;
+    border: 1px solid var(--semantic-button-primary);
+    background-color: none;
+
+    font-family: var(--text-small-normal-font-family);
+    font-weight: var(--text-small-normal-font-weight);
+    color: var(--semantic-text-primary);
+    font-size: var(--text-small-normal-font-size);
+    letter-spacing: var(--text-small-normal-letter-spacing);
+    line-height: var(--text-small-normal-line-height);
+    font-style: var(--text-small-normal-font-style);
+  }
+
 .portfolio-header .text-wrapper {
     position: relative; 
     width: fit-content; 
     margin-top: -1px; 
     font-family: var(--text-small-semi-bold-font-family);
     font-weight: var(--text-small-semi-bold-font-weight);
-    color: var(--text-decorate-dark);
+    color: var(--semantic-text-primary);
     font-size: var(--text-small-semi-bold-font-size);
     letter-spacing: var(--text-small-semi-bold-letter-spacing); 
     line-height: var(--text-small-semi-bold-line-height);

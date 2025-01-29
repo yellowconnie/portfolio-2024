@@ -882,6 +882,7 @@
   border-radius: 32px;
   border: 1px solid var(--semantic-button-primary);
   background-color: none;
+  box-shadow: 1px 1px 10px var(--semantic-tag-background-transparent);
 
   font-family: var(--text-small-normal-font-family);
   font-weight: var(--text-small-normal-font-weight);
@@ -897,7 +898,7 @@
   color: var(--semantic-button-highlight);
   box-shadow: 1px 1px 10px var(--semantic-button-highlight);
   transform: scale(1.05);
-  transition: 0.5s ease;
+  transition: 0.3s ease;
 }
 
 .dropdown-content {
