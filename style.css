@@ -511,9 +511,6 @@
   position:relative; */
 }
 
- 
-
-
 /* specialties hover effect */
 /* .cursor{
   position: relative;
@@ -554,21 +551,37 @@
   opacity: 1;
 } */
 
-.tab-horizontal-1 .tab-horizontal-2 .tab-horizontal-3 .tab-horizontal-4 .tab-horizontal-5{
+.tab-horizontal-1,
+.tab-horizontal-2,
+.tab-horizontal-3,
+.tab-horizontal-4{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   align-self: stretch;
   flex-wrap: nowrap;
   flex-shrink: 0;
-  gap: 16px;
+  gap: 8px;
   position: relative;
   overflow: hidden;
-
-  width: 100%;
 }
 
-.short-heading-1 .short-heading-2 .short-heading-3 .short-heading-4 .short-heading-5{
+.tab-horizontal-1,
+.tab-horizontal-2,
+.tab-horizontal-3,
+.tab-horizontal-4 {
+  width: 90%;
+  height: 100%;
+  border: 1px solid var(--semantic-tag-background-transparent);
+  box-shadow: 0 2px 2px 0 var(--semantic-tag-background-transparent);
+  border-radius: 24px;
+  margin-bottom: 24px;
+  transition: all 0.3s ease;
+}
+.short-heading-1,
+.short-heading-2,
+.short-heading-3,
+.short-heading-4{
   align-self: stretch;
   flex-shrink: 0;
   flex-basis: auto;
@@ -577,64 +590,38 @@
   white-space: nowrap;
 }
 
-.text-content-1 .text-content-2 .text-content-3 .text-content-4 .text-content-5{
+.text-content-1,
+.text-content-2,
+.text-content-3,
+.text-content-4{
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   align-self: stretch;
   flex-shrink: 0;
   position: relative;
-  /* width: 600px; */
-  height: 48px;
+  width: 70%;
+  height: auto;
   text-align: left;
 }
 
-.tab-horizontal-1 img{
-  align-self: stretch;
-  flex-shrink: 0;
-  flex-basis: auto;
-  position: relative;
-  width: 640px;
-  height: 200px;
-  white-space: nowrap;
-  padding-top: 8px;
-  object-fit: cover;
-}
-.tab-horizontal-2 img{
-  align-self: stretch;
-  flex-shrink: 0;
-  flex-basis: auto;
-  position: relative;
-  width: 640px;
-  height: 200px;
-  white-space: nowrap;
-  padding-top: 8px;
-  object-fit: cover;
-}
-.tab-horizontal-3 img{
-  align-self: stretch;
-  flex-shrink: 0;
-  flex-basis: auto;
-  position: relative;
-  width: 640px;
-  height: 200px;
-  white-space: nowrap;
-  padding-top: 8px;
-  object-fit: cover;
-}
+.tab-horizontal-1 img,
+.tab-horizontal-2 img,
+.tab-horizontal-3 img,
 .tab-horizontal-4 img{
   align-self: stretch;
   flex-shrink: 0;
   flex-basis: auto;
   position: relative;
-  width: 640px;
-  height: 200px;
+  width: 100%;
+  height: 100%;
   white-space: nowrap;
   padding-top: 8px;
   object-fit: cover;
 }
+
 .tab-horizontal-1 {
-  padding: 16px 0 16px 32px;
+  padding: 24px 32px 24px 32px;
   z-index: 2;
 }
 .short-heading-1 {
@@ -661,7 +648,7 @@
   width: 600px;
 }
 .tab-horizontal-2 {
-  padding: 16px 0 16px 32px;
+  padding: 24px 32px 24px 32px;
   z-index: 5;
 }
 .short-heading-2 {
@@ -684,10 +671,9 @@
   line-height: var(--text-small-normal-line-height);
   font-style: var(--text-small-normal-font-style);
   z-index: 7;
-  width: 600px
 }
 .tab-horizontal-3 {
-  padding: 16px 0 16px 32px;
+  padding: 24px 32px 24px 32px;
   z-index: 8;
 }
 .short-heading-3 {
@@ -713,7 +699,7 @@
   width: 600px
 }
 .tab-horizontal-4 {
-  padding: 16px 0 16px 32px;
+  padding: 24px 32px 24px 32px;
   z-index: 11;
 }
 .short-heading-4 {
@@ -887,16 +873,31 @@
 }
 
 .layout .tabs-link a{
-  color: var(--primitive-color-highlight);
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  padding: 18px 24px;
+  position: relative;
+  flex: 0 0 auto;
+  border-radius: 32px;
+  border: 1px solid var(--semantic-button-primary);
+  background-color: none;
+
+  font-family: var(--text-small-normal-font-family);
+  font-weight: var(--text-small-normal-font-weight);
+  color: var(--semantic-button-primary);
+  font-size: var(--text-small-normal-font-size);
+  letter-spacing: var(--text-small-normal-letter-spacing);
+  line-height: var(--text-small-normal-line-height);
+  font-style: var(--text-small-normal-font-style);
   text-decoration: none;
-  /* transition: 0.3s ease; */
 }
  .layout .tabs-link a:hover{
-  color: var(--text-decorate-dark);
-  text-decoration: underline var(--primitive-color-highlight);
-  text-underline-offset: 6px;
-  text-decoration-thickness: 1px;
-  transition: 0.3s ease;
+  background-color: var(--semantic-button-primary);
+  color: var(--semantic-button-highlight);
+  box-shadow: 1px 1px 10px var(--semantic-button-highlight);
+  transform: scale(1.05);
+  transition: 0.5s ease;
 }
 
 .dropdown-content {
