@@ -41,9 +41,9 @@
           <div id="contact" class="text-wrapper">
             <a href="contact.html">Contact</a>
             <div class="dropdown-content">
-              <a href="mailto:conniehuang@ocadu.ca">Email</a>
+              <a href="mailto:tzuyu820@gmail.com">Email</a>
               <a href="https://www.linkedin.com/in/yellowconnie/">LinkedIn</a>
-              <a href="https://www.instagram.com/cooonni3/">Instagram</a>
+              <a href="https://www.instagram.com/by.yellowconnie/">Instagram</a>
             </div>
           </div>
         </div>
@@ -54,9 +54,9 @@
       <div class="column">
         <div class="content">
           <div class="specialties-link">
-            <div class="specialty1"><a href="portfolio.html#service-design">ServiceDesign</a></div>
-            <div class="specialty2"><a href="portfolio.html#product-design">ProductDesign</a></div>
-            <div class="specialty3"><a href="portfolio.html#furniture-design">FurnitureDesign</a></div>
+            <div class="specialty1" data-image="sephora-header.png"><a href="portfolio.html#service-design">ServiceDesign</a></div>
+            <div class="specialty2" data-image="crutch-header.png"><a href="portfolio.html#product-design">ProductDesign</a></div>
+            <div class="specialty3" data-image="ruvo-header.png"><a href="portfolio.html#furniture-design">FurnitureDesign</a></div>
           </div>
           
           <div class="medium-length-hero">by<span class="highlight">.</span>YellowConnie</div>
@@ -72,9 +72,10 @@
           </div>
         </div>
       </div>
+      
     </div>
 
-    <div class="infinite-marquee">
+    <!-- <div class="infinite-marquee">
       <div class="marquee-content">
         <div class="marquee-item"><a href="sephora.html"><img src="sephora-header.png" alt="Sephora Project"></a></div>
         <div class="marquee-item"><a href="crutches.html"><img src="crutch-header.png" alt="Crutch Project"></a></div>
@@ -89,7 +90,7 @@
         <div class="marquee-item"><a href="more.html"><img src="less-is-more.png" alt="Less is More Project"></a></div>
         <div class="marquee-item"><a href="portfolio.html#others"><img src="others.png" alt="Other Projects"></a></div>
       </div>
-    </div>
+    </div> -->
     
     <div class="layout" id="philosophy-left">
       <div class="container">
@@ -326,6 +327,43 @@
           card.style.setProperty('--move-y', 0);
         });
       });    
+  </script>
+  <script>
+    document.querySelectorAll('.specialty1 a, .specialty2 a, .specialty3 a').forEach(link => {
+      const hoverImage = document.createElement('img');
+      hoverImage.className = 'hover-preview';
+      document.body.appendChild(hoverImage);
+
+      link.addEventListener('mouseover', (e) => {
+        const imageSrc = link.parentElement.getAttribute('data-image');
+        hoverImage.src = imageSrc;
+        hoverImage.style.display = 'block';
+        updateImagePosition(e, hoverImage);
+      });
+
+      link.addEventListener('mousemove', (e) => {
+        updateImagePosition(e, hoverImage);
+      });
+
+      link.addEventListener('mouseout', () => {
+        hoverImage.style.display = 'none';
+      });
+    });
+
+    function updateImagePosition(e, image) {
+      const offset = 20; // Distance from cursor
+      image.style.left = `${e.pageX + offset}px`;
+      image.style.top = `${e.pageY - image.offsetHeight/2}px`;
+    }
+  </script>
+  <script>
+    document.querySelector('.medium-length-hero').addEventListener('mousemove', (e) => {
+      const tooltip = e.target;
+      const tooltipText = window.getComputedStyle(tooltip, '::after');
+      
+      tooltip.style.setProperty('--x', e.clientX + 5 + 'px');
+      tooltip.style.setProperty('--y', e.clientY + 5 + 'px');
+    });
   </script>
   </body>
 </html>

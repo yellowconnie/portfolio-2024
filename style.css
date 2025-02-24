@@ -226,7 +226,8 @@
 }
 
 .header .medium-length-hero {
-  /* position: relative; */
+  position: relative;
+  cursor: default;
   align-self: stretch;
   margin-top: -1px;
   font-family: var(--heading-desktop-h1-font-family);
@@ -238,6 +239,26 @@
   line-height: var(--heading-desktop-h1-line-height);
   font-style: var(--heading-desktop-h1-font-style);
 }
+/* funFactFloating
+.header .medium-length-hero::after {
+  content: "Fun fact: My last name \"Huang\" also means \"yellow\" in Mandarin, that's why I go by \"YellowConnie\" LOL";
+  position: fixed;
+  font-size: var(--text-small-light-font-size);
+  font-family: var(--text-small-light-font-family);
+  font-weight: var(--text-small-light-font-weight);
+  color: var(--semantic-text-highlight);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+  left: var(--x, 0);
+  top: var(--y, 0);
+  width: auto;
+}
+
+.header .medium-length-hero:hover::after {
+  opacity: 1;
+} */
 
 .header .highlight{
   color: var(--semantic-text-highlight);
@@ -264,6 +285,17 @@
 .specialty1, .specialty2, .specialty3, .specialty4, .specialty5 {
   padding-bottom: 6px;
 }
+
+.hover-preview {
+  position: fixed;
+  display: none;
+  width: 480px; 
+  height: auto;
+  pointer-events: none; 
+  z-index: 1000;
+  animation: fadeInFromBottom 0.3s ease-out forwards;
+}
+
 @keyframes fadeInFromBottom {
   from {
     opacity: 0;
@@ -274,7 +306,6 @@
     transform: translateY(0);
   }
 }
-
 .specialties-link#specialty4 {
   display: flex;
   justify-content: center;
@@ -306,8 +337,7 @@
   width: max-content;
   box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
-
-/* Add speech bubble triangle */
+/* speech bubble triangle */
 .header .specialty4:before {
   content: '';
   position: absolute;
