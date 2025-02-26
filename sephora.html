@@ -499,20 +499,24 @@
             <div class="row">
                 <div class="column">
                     <div class="subheading">Survey Takeaways</div>
+                    <p id="sephora" class="p">
+                        We conducted a survey with 17 respondents to collect general statistics and their 
+                        experience with Sephora's secondary packaging. The majority of respondents are 
+                        female between the age of 20-28, with most of them being Sephora's repeat customers.
+                    </p>
                     <div class="carousel">
-                        <!-- PUT DATA HERE with description-->
                         <div class="carousel-container">
                             <div class="carousel-slide">
-                                <img src="sephora-graph01.png" alt="A pie chart showing the percentage of in-store vs online shopping preferences" />
+                                <img src="sephora-graph01.png" alt="A pie chart showing the percentage of in-store vs online shopping preferences, with 41.2% of respondents preferring online shopping and 58.8% preferring in-store shopping" />
                             </div>
                             <div class="carousel-slide">
-                                <img src="sephora-snapshotP.png" alt="Feeling Luxurious" />
+                                <img src="sephora-graph02.png" alt="A bar chart showing the data of respondent's satisfaction rate of their online shopping expereince at sephora, with 41.2% of respondents having a satisfaction rate of 4 out of 5 and 23.5% having a satisfaction rate of 5 out of 5" />
                             </div>
                             <div class="carousel-slide">
-                                <img src="circular-detail.png" alt="Circular Economy" />
+                                <img src="sephora-graph03.png" alt="A bar chart showing the data of respondent's rating of the importance of the unboxing experience when shop online, with 52.9% of respondents rating it as 4 out of 5 and 17.6% rating it as 5 out of 5" />
                             </div>
                             <div class="carousel-slide">
-                                <img src="luxury-detail.png" alt="Luxury Experience" />
+                                <img src="sephora-graph04.png" alt="A bar chart showing the data of respondent's satisfaction rate of their unboxing experience of Sephora's packages, with 47.1% of respondents rating it as 3 out of 5 or lower." />
                             </div>
                         </div>
                         <button class="carousel-button prev" aria-label="Previous slide">&#10094;</button>
@@ -521,9 +525,6 @@
                     </div>
                     <div class="text-wrapper">"It's just a box with the purchased items thrown in."</div>
                     <div class="text-wrapper">"It doesn't match the aesthetic of some high-end brands they sell."</div>
-                    <p id="sephora" class="p">
-                        - Average Rating: 3/5
-                    </p>
                     <p id="sephora" class="p">
                         - Positive: Customers enjoyed the free samples and fast delivery, 
                         with some describing the unboxing as "exciting." But this mainly 
@@ -1096,8 +1097,7 @@
             const dotsContainer = document.querySelector('.carousel-dots');
             
             let currentIndex = 0;
-    
-            // Create dots
+
             slides.forEach((_, index) => {
                 const dot = document.createElement('div');
                 dot.classList.add('dot');
@@ -1106,20 +1106,18 @@
                 dotsContainer.appendChild(dot);
             });
     
-            // Update buttons visibility
             function updateButtons() {
                 prevButton.style.display = currentIndex === 0 ? 'none' : 'block';
                 nextButton.style.display = currentIndex === slides.length - 1 ? 'none' : 'block';
             }
     
-            // Update dots
+
             function updateDots() {
                 document.querySelectorAll('.dot').forEach((dot, index) => {
                     dot.classList.toggle('active', index === currentIndex);
                 });
             }
     
-            // Go to specific slide
             function goToSlide(index) {
                 currentIndex = index;
                 container.style.transform = `translateX(-${currentIndex * 100}%)`;
@@ -1127,7 +1125,6 @@
                 updateDots();
             }
     
-            // Event listeners
             prevButton.addEventListener('click', () => {
                 if (currentIndex > 0) goToSlide(currentIndex - 1);
             });
@@ -1136,10 +1133,8 @@
                 if (currentIndex < slides.length - 1) goToSlide(currentIndex + 1);
             });
     
-            // Initialize
             updateButtons();
-    
-            // Optional: Auto-play functionality
+            
             let autoplayInterval;
             
             function startAutoplay() {
@@ -1149,17 +1144,15 @@
                     } else {
                         goToSlide(0);
                     }
-                }, 5000); // Change slide every 5 seconds
+                }, 7500); 
             }
     
             function stopAutoplay() {
                 clearInterval(autoplayInterval);
             }
     
-            // Start autoplay initially
             startAutoplay();
     
-            // Pause autoplay on hover
             container.addEventListener('mouseenter', stopAutoplay);
             container.addEventListener('mouseleave', startAutoplay);
         });
