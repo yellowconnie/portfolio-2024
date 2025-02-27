@@ -509,7 +509,7 @@
     width: 100%;
     flex: 0 0 auto;
 }
-.feature-layout .seperator {
+.seperator {
     display: inline-block;
     align-items: flex-start;
     position:relative;
@@ -517,6 +517,9 @@
     width: 100%;
     flex: 0 0 auto;
     border-top: 1px solid var(--semantic-tag-background-transparent);
+}
+.seperator#work {
+    margin: 40px 0px 40px 0px;
 }
 .feature-layout .container1 {
     display: flex;
